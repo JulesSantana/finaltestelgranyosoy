@@ -2,33 +2,21 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
 let supabaseInstance: SupabaseClient | null = null;
 
-function getSupabaseUrl() {
-  if (typeof window !== 'undefined') {
-    return process.env.NEXT_PUBLIC_SUPABASE_URL;
-  }
-  return process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-}
-
-function getSupabaseKey() {
-  if (typeof window !== 'undefined') {
-    return process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  }
-  return process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
-}
-
-function initializeSupabase() {
+function initializeSupabase(): SupabaseClient {
   if (supabaseInstance) {
     return supabaseInstance;
   }
 
-  const supabaseUrl = getSupabaseUrl();
-  const supabaseAnonKey = getSupabaseKey();
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   if (!supabaseUrl || !supabaseAnonKey) {
-    if (typeof window !== 'undefined') {
-      throw new Error('Missing Supabase environment variables');
-    }
-    return null as any;
+    console.error('Supabase environment variables are missing');
+
+    return createClient(
+      'https://placeholder.supabase.co',
+      'placeholder-key'
+    );
   }
 
   supabaseInstance = createClient(supabaseUrl, supabaseAnonKey);
@@ -42,10 +30,6 @@ export const supabase = new Proxy({} as SupabaseClient, {
     }
 
     const client = initializeSupabase();
-    if (!client) {
-      return undefined;
-    }
-
     const value = client[prop as keyof SupabaseClient];
 
     if (typeof value === 'function') {
