@@ -2,7 +2,7 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
 let supabaseInstance: SupabaseClient | null = null;
 
-function getSupabaseClient() {
+export function getSupabase() {
   if (supabaseInstance) {
     return supabaseInstance;
   }
@@ -11,9 +11,6 @@ function getSupabaseClient() {
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   if (!supabaseUrl || !supabaseAnonKey) {
-    if (typeof window === 'undefined') {
-      return null as any;
-    }
     throw new Error('Missing Supabase environment variables');
   }
 
@@ -22,8 +19,12 @@ function getSupabaseClient() {
 }
 
 export const supabase = new Proxy({} as SupabaseClient, {
-  get(target, prop) {
-    const client = getSupabaseClient();
-    return client?.[prop as keyof SupabaseClient];
+  get(_target, prop) {
+    const client = getSupabase();
+    const value = client[prop as keyof SupabaseClient];
+    if (typeof value === 'function') {
+      return value.bind(client);
+    }
+    return value;
   }
 });
