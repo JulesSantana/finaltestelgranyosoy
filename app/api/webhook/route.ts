@@ -4,25 +4,44 @@ import { createClient } from '@supabase/supabase-js';
 
 export const dynamic = 'force-dynamic';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-  {
+function getSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error('Missing Supabase environment variables');
+  }
+
+  return createClient(supabaseUrl, supabaseKey, {
     auth: {
       autoRefreshToken: false,
       persistSession: false
     }
+  });
+}
+
+function getStripeClient() {
+  const stripeKey = process.env.STRIPE_SECRET_KEY;
+
+  if (!stripeKey) {
+    throw new Error('Missing Stripe secret key');
   }
-);
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-09-30.clover',
-});
-
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
+  return new Stripe(stripeKey, {
+    apiVersion: '2025-09-30.clover',
+  });
+}
 
 export async function POST(req: NextRequest) {
   try {
+    const supabase = getSupabaseClient();
+    const stripe = getStripeClient();
+    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+    if (!webhookSecret) {
+      throw new Error('Missing Stripe webhook secret');
+    }
+
     const body = await req.text();
     const signature = req.headers.get('stripe-signature');
 
