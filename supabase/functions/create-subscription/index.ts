@@ -25,9 +25,10 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
-    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-    const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-    const stripeSecretKey = Deno.env.get("STRIPE_SECRET_KEY");
+    const supabaseUrl = "postgresql://neondb_owner:npg_7sjaGVgz6HLN@ep-dry-sound-aetjqtbg-pooler.c-2.us-east-2.aws.neon.tech/neondb?channel_binding=require&sslmode=require"; //Deno.env.get("SUPABASE_URL")!;
+    const supabaseServiceKey = "sb_secret_0RPEz8ptHiGnnX5MI4bpIw_CUGbtbcR"; // Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+    const stripeSecretKey = "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\n" +
+        "pk_live_51SK0tdIUlX2ykqnUUJWuOpuiDpTLRlzdU2PH7cYVE5wsmi8XYb0hm9ZcaNXckK0LAbMjg3DAwLxs1V9dYg1MrsCB00SaIXEFky"; //Deno.env.get("STRIPE_SECRET_KEY");
 
     if (!stripeSecretKey) {
       return new Response(
