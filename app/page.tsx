@@ -770,7 +770,7 @@ export default function Home() {
                          style={{ borderColor: '#F4D03F', backgroundColor: '#15304a', animationDelay: '0.2s' }}>
                       <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/30 z-10"></div>
                       <Image
-                        src="/worship-includes-music-numerous-people-600nw-2327079459 copy.webp"
+                        src="/worship-includes-music-numerous-people-600nw-2327079459.webp"
                         alt="Congregación adorando"
                         width={400}
                         height={300}
