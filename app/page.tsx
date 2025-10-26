@@ -24,7 +24,7 @@ export default function Home() {
 
   const olivarCarouselImages = [
     '/complejo-el-olivar-sl(1) copy copy.jpg',
-    '/PHOTO-2025-10-14-13-02-51(15) copy.jpg',
+    '/Imagen de WhatsApp 2025-10-26 a las 13.26.36_e7d52cb9.jpg',
     '/PHOTO-2025-10-14-13-02-51(14).jpg',
     '/PHOTO-2025-10-14-13-02-51(13).jpg',
     '/PHOTO-2025-10-14-13-02-51(12).jpg',
