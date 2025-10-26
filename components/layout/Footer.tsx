@@ -106,7 +106,7 @@ export function Footer() {
                 className="relative w-48 h-16 block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_rgba(244,208,63,0.6)] cursor-pointer group"
               >
                 <Image
-                  src="/image0(20).jpeg"
+                  src="/logo.png"
                   alt="Lumina Web"
                   fill
                   className="object-contain transition-all duration-300 group-hover:brightness-125"
