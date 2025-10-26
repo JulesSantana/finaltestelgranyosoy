@@ -20,7 +20,7 @@ export function Footer() {
             <Link href="/" className="group mb-6 inline-block">
               <div className="relative w-64 h-16 transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_15px_rgba(244,208,63,0.5)]">
                 <Image
-                  src="/image5(1) copy copy copy copy copy copy copy copy.jpeg"
+                  src="/image copy copy copy.png"
                   alt="EL GRAN YO SOY"
                   fill
                   className="object-contain object-left"
