@@ -23,7 +23,7 @@ export default function Home() {
   const { t } = useLanguage();
 
   const olivarCarouselImages = [
-    '/complejo-el-olivar-sl(1) copy copy.jpg',
+    '/Imagen de WhatsApp 2025-10-26 a las 13.55.17_2ec5d865.jpg',
     '/Imagen de WhatsApp 2025-10-26 a las 13.26.36_e7d52cb9.jpg',
     '/Imagen de WhatsApp 2025-10-26 a las 13.54.46_a9cd3a68.jpg',
     '/Imagen de WhatsApp 2025-10-26 a las 13.55.46_2eacbcb6.jpg',
