@@ -99,7 +99,7 @@ export function Header() {
               </button>
             </div>
 
-            <Link href="/mi-cuenta" className="hidden lg:flex items-center gap-1.5 hover:opacity-70 transition-colors flex-shrink-0 bg-navy/5 px-3 py-2 rounded-lg" style={{ color: '#1e4f8f' }}>
+            <Link href="/mi-cuenta" className="hidden lg:flex items-center gap-1.5 hover:opacity-70 transition-colors flex-shrink-0 px-3 py-2 rounded-lg" style={{ color: '#1e4f8f', backgroundColor: 'rgba(30, 79, 143, 0.05)' }}>
               <User className="h-5 w-5" />
               <span className="text-xs font-semibold whitespace-nowrap">MI CUENTA</span>
             </Link>
