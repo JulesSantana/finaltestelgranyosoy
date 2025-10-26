@@ -936,32 +936,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex justify-start items-center mt-20 mb-20 ml-8">
-            <a
-              href="https://www.instagram.com/luminaweb.design"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="flex flex-col items-start">
-                <Image
-                  src="/lumina web.png"
-                  alt="Lumina Web - Diseñador Digital"
-                  width={250}
-                  height={250}
-                  className="object-contain"
-                  priority
-                />
-                <div className="mt-4">
-                  <p className="text-xl font-bold" style={{ color: '#1E4F8F' }}>
-                    Lumina Web
-                  </p>
-                  <p className="text-sm" style={{ color: '#1E4F8F', opacity: 0.8 }}>
-                    Diseñador Digital y Creador de Páginas Web
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
 
           <div className="text-center mt-20 mb-16">
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4" style={{
