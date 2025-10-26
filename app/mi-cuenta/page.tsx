@@ -5,22 +5,40 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Video, Lock, LogOut, User } from 'lucide-react';
 
 export default function MiCuentaPage() {
-  const { user, loading, logout, isSubscribed } = useAuth();
+  const { user, loading, logout, isSubscribed, login } = useAuth();
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (mounted && !loading && !user) {
-      router.push('/login');
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    setIsLoggingIn(true);
+
+    try {
+      const result = await login(email, password);
+
+      if (!result.success) {
+        setError(result.error || 'Error al iniciar sesión. Verifica tu email y contraseña.');
+      }
+    } catch (err: any) {
+      setError(err.message || 'Error al iniciar sesión');
+    } finally {
+      setIsLoggingIn(false);
     }
-  }, [user, loading, mounted, router]);
+  };
 
   const handleLogout = async () => {
     await logout();
@@ -39,7 +57,104 @@ export default function MiCuentaPage() {
   }
 
   if (!user) {
-    return null;
+    return (
+      <div className="min-h-screen py-12" style={{ backgroundColor: '#F4D03F' }}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-md mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center" style={{
+              color: '#FFFFFF',
+              textShadow: '0 0 20px rgba(255, 255, 255, 0.8)'
+            }}>
+              Mi Cuenta
+            </h1>
+
+            <Card className="border-2" style={{ borderColor: '#C9A961' }}>
+              <CardHeader>
+                <CardTitle className="text-2xl text-center text-navy">
+                  Iniciar Sesión
+                </CardTitle>
+                <p className="text-center text-sm text-navy/70 mt-2">
+                  Ingresa con tu email y contraseña para acceder a tu contenido
+                </p>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleLogin} className="space-y-4">
+                  {error && (
+                    <div className="p-3 rounded-lg text-sm text-red-600 bg-red-50 border border-red-200">
+                      {error}
+                    </div>
+                  )}
+
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-navy font-semibold">
+                      Email
+                    </Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="tu@email.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      disabled={isLoggingIn}
+                      className="border-2"
+                      style={{ borderColor: '#C9A961' }}
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="password" className="text-navy font-semibold">
+                      Contraseña
+                    </Label>
+                    <Input
+                      id="password"
+                      type="password"
+                      placeholder="••••••••"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                      disabled={isLoggingIn}
+                      minLength={8}
+                      className="border-2"
+                      style={{ borderColor: '#C9A961' }}
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    className="w-full text-white font-semibold py-6"
+                    style={{ backgroundColor: '#1E4F8F' }}
+                    disabled={isLoggingIn}
+                  >
+                    {isLoggingIn ? 'Iniciando sesión...' : 'Iniciar Sesión'}
+                  </Button>
+                </form>
+
+                <div className="mt-6 text-center">
+                  <p className="text-sm text-navy/70 mb-3">
+                    ¿No tienes una cuenta todavía?
+                  </p>
+                  <Button
+                    onClick={() => router.push('/suscripciones')}
+                    variant="outline"
+                    className="w-full border-2 font-semibold"
+                    style={{ borderColor: '#1E4F8F', color: '#1E4F8F' }}
+                  >
+                    Suscribirse Ahora
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="mt-6 text-center">
+              <p className="text-sm text-navy/80">
+                Después de pagar tu suscripción, usa el email y contraseña que configuraste para acceder.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   const subscribed = isSubscribed();
