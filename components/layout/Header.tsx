@@ -25,10 +25,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
-      <div className="container mx-auto px-4 lg:px-6">
-        <div className="flex h-20 items-center justify-between gap-2">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-6">
+        <div className="flex h-16 sm:h-20 items-center justify-between gap-1 sm:gap-2">
           <Link href="/" className="flex items-center group flex-shrink-0">
-            <div className="relative h-12 lg:h-14 w-40 sm:w-52 lg:w-64">
+            <div className="relative h-10 sm:h-12 lg:h-14 w-32 sm:w-40 md:w-52 lg:w-64">
               <Image
                 src="/Captura de pantalla 2025-10-25 154517.png"
                 alt="EL GRAN YO SOY"
@@ -110,14 +110,14 @@ export function Header() {
                   variant="ghost"
                   size="icon"
                   aria-label="Abrir menú"
-                  className="touch-manipulation min-h-[44px] min-w-[44px] h-11 w-11 rounded-lg hover:bg-navy/10 active:bg-navy/15 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2"
+                  className="touch-manipulation min-h-[48px] min-w-[48px] h-12 w-12 rounded-lg hover:bg-navy/10 active:bg-navy/15 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2 flex-shrink-0"
                   style={{ color: '#1e4f8f' }}
                 >
-                  <Menu className="h-6 w-6" strokeWidth={2.5} />
+                  <Menu className="h-7 w-7" strokeWidth={2.5} />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-72">
-                <div className="flex flex-col gap-4 mt-8">
+              <SheetContent side="right" className="w-[85vw] max-w-sm">
+                <div className="flex flex-col gap-3 mt-8">
                   {navItems.map((item) => {
                     const isActive = pathname === item.href;
                     return (
@@ -126,20 +126,21 @@ export function Header() {
                         href={item.href}
                         onClick={() => setIsOpen(false)}
                         aria-current={isActive ? 'page' : undefined}
-                        className={`px-4 py-3 text-base font-medium transition-colors rounded-xl ${
+                        className={`px-4 py-4 text-lg font-medium transition-colors rounded-xl ${
                           isActive
-                            ? 'text-gold bg-navy/5'
-                            : 'text-navy hover:text-gold hover:bg-navy/5'
+                            ? 'bg-navy/5'
+                            : 'hover:bg-navy/5'
                         }`}
+                        style={{ color: '#1e4f8f' }}
                       >
                         {item.label}
                       </Link>
                     );
                   })}
                   <div className="border-t pt-4 mt-4">
-                    <Link href="/mi-cuenta" className="flex items-center gap-2 px-4 py-3 text-navy hover:bg-navy/5 rounded-xl" onClick={() => setIsOpen(false)}>
-                      <User className="h-5 w-5" />
-                      <span className="text-base font-medium">{t('nav.myAccount')}</span>
+                    <Link href="/mi-cuenta" className="flex items-center gap-3 px-4 py-4 hover:bg-navy/5 rounded-xl" onClick={() => setIsOpen(false)} style={{ color: '#1e4f8f' }}>
+                      <User className="h-6 w-6" />
+                      <span className="text-lg font-medium">{t('nav.myAccount')}</span>
                     </Link>
                   </div>
                 </div>

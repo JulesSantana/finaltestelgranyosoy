@@ -6,13 +6,17 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   @media (min-width: 768px) {
     html {
       font-size: 16px;
     }
+  }
+
+  * {
+    box-sizing: border-box;
   }
 
   body {

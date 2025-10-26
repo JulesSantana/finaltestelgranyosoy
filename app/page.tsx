@@ -43,8 +43,8 @@ export default function Home() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#F4D03F' }}>
       <section className="relative overflow-hidden" style={{ backgroundColor: '#F4D03F' }}>
-        <div className="container mx-auto px-6 pt-8" style={{ backgroundColor: '#F4D03F' }}>
-          <div className="bg-white rounded-xl shadow-lg p-4">
+        <div className="container mx-auto px-4 pt-8" style={{ backgroundColor: '#F4D03F' }}>
+          <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6">
             <div className="mb-6 text-center">
               <style jsx>{`
                 @keyframes shimmer {
@@ -99,27 +99,25 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="mt-4 text-center px-4 space-y-4">
-              <Link href="/suscripciones">
+            <div className="mt-4 text-center px-2 space-y-4 flex flex-col items-center">
+              <Link href="/suscripciones" className="w-full flex justify-center">
                 <Button
                   size="lg"
-                  className="bg-white hover:bg-gray-50 rounded-full px-10 py-6 text-base font-semibold shadow-xl transition-all"
+                  className="bg-white hover:bg-gray-50 rounded-full px-6 sm:px-10 py-5 sm:py-6 text-sm sm:text-base font-semibold shadow-xl transition-all w-auto max-w-full"
                   style={{ color: '#1e4f8f' }}
                 >
                   MODO DE SUSCRIPCION
                 </Button>
               </Link>
-              <div>
-                <Link href="/celebrando-con-jesus">
-                  <Button
-                    size="lg"
-                    className="bg-white hover:bg-gray-50 rounded-full px-6 sm:px-10 py-6 text-sm sm:text-base font-semibold shadow-xl transition-all whitespace-normal sm:whitespace-nowrap"
-                    style={{ color: '#1e4f8f' }}
-                  >
-                    PREMIOS HASTA EL 7 DE NOVIEMBRE
-                  </Button>
-                </Link>
-              </div>
+              <Link href="/celebrando-con-jesus" className="w-full flex justify-center">
+                <Button
+                  size="lg"
+                  className="bg-white hover:bg-gray-50 rounded-full px-4 sm:px-10 py-5 sm:py-6 text-xs sm:text-base font-semibold shadow-xl transition-all w-auto max-w-full"
+                  style={{ color: '#1e4f8f' }}
+                >
+                  PREMIOS HASTA EL 7 DE NOVIEMBRE
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
