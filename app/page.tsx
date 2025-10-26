@@ -26,7 +26,7 @@ export default function Home() {
     '/complejo-el-olivar-sl(1) copy copy.jpg',
     '/Imagen de WhatsApp 2025-10-26 a las 13.26.36_e7d52cb9.jpg',
     '/Imagen de WhatsApp 2025-10-26 a las 13.54.46_a9cd3a68.jpg',
-    '/PHOTO-2025-10-14-13-02-51(13).jpg',
+    '/Imagen de WhatsApp 2025-10-26 a las 13.55.46_2eacbcb6.jpg',
     '/PHOTO-2025-10-14-13-02-51(12).jpg',
     '/adolescente-feliz-celebrando-su-decimoquinto-cumpleanos copy copy.jpg',
     '/novias-pareja-corte-boda-torta copy copy.jpg',
