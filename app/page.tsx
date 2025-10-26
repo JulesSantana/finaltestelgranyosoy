@@ -28,7 +28,7 @@ export default function Home() {
     '/Imagen de WhatsApp 2025-10-26 a las 13.54.46_a9cd3a68.jpg',
     '/Imagen de WhatsApp 2025-10-26 a las 13.55.46_2eacbcb6.jpg',
     '/Imagen de WhatsApp 2025-10-26 a las 13.59.33_766420ae.jpg',
-    '/adolescente-feliz-celebrando-su-decimoquinto-cumpleanos copy copy.jpg',
+    '/image copy.png',
     '/novias-pareja-corte-boda-torta copy copy.jpg',
   ];
 
