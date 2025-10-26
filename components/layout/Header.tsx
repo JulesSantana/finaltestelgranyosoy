@@ -30,7 +30,7 @@ export function Header() {
           <Link href="/" className="flex items-center group -ml-4">
             <div className="relative h-16 flex-shrink-0" style={{ width: '400px' }}>
               <Image
-                src="/elgranyosoy2.jpg"
+                src="/Captura de pantalla 2025-10-25 154517.png"
                 alt="EL GRAN YO SOY"
                 fill
                 className="object-contain object-left"
