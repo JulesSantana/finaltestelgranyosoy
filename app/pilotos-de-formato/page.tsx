@@ -1,217 +1,103 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, MapPin, Users, Video, Heart, Star } from 'lucide-react';
-
-export default function PilotosDeFormatoPage() {
+export default function PilotosDeFormato() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#F4D03F' }}>
-      <section className="relative py-20">
+      <section className="py-12" style={{ backgroundColor: '#F4D03F' }}>
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6" style={{
-              color: '#FFFFFF',
-              textShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6)'
-            }}>
-              Episodio Piloto Promocional
-            </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto" style={{ color: '#1E4F8F' }}>
-              ¡Sé parte de la historia de "Celebrando con Jesús"!
-            </p>
-          </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl md:text-6xl font-bold mb-4" style={{
+                color: '#FFFFFF',
+                fontFamily: 'system-ui, sans-serif',
+                textShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4)'
+              }}>
+                PILOTOS DE FORMATO
+              </h2>
+              <div className="flex justify-center">
+                <div className="w-20 h-1" style={{ backgroundColor: '#f59e0b' }} />
+              </div>
+            </div>
 
-          <div className="max-w-5xl mx-auto">
-            <Card className="mb-12" style={{ backgroundColor: '#1E4F8F' }}>
-              <CardHeader>
-                <CardTitle className="text-3xl text-center" style={{ color: '#F4D03F' }}>
-                  Información del Piloto
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-8 mb-8">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#F4D03F40' }}>
-                      <Calendar className="w-6 h-6" style={{ color: '#F4D03F' }} />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold uppercase tracking-wide mb-1" style={{ color: '#F4D03F' }}>
-                        Fecha del Piloto
-                      </p>
-                      <p className="text-xl font-semibold text-white">
-                        Viernes 7 de Noviembre
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#F4D03F40' }}>
-                      <MapPin className="w-6 h-6" style={{ color: '#F4D03F' }} />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold uppercase tracking-wide mb-1" style={{ color: '#F4D03F' }}>
-                        Lugar
-                      </p>
-                      <p className="text-xl font-semibold text-white">
-                        Complejo El Olivar
-                      </p>
+            <div className="grid md:grid-cols-1 gap-8 mb-8">
+              <div className="rounded-2xl p-10 border-2" style={{ backgroundColor: '#1E4F8F', borderColor: '#F4D03F' }}>
+                <h2 className="text-2xl font-bold mb-6 text-center" style={{ color: '#F4D03F', fontFamily: 'system-ui, sans-serif' }}>
+                  Sobre Nuestros Pilotos de Formato
+                </h2>
+
+                <div className="space-y-5">
+                  <p className="leading-relaxed text-center" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', fontSize: '15px', lineHeight: '1.7' }}>
+                    Los pilotos de formato desarrollados por <span style={{ fontWeight: 'bold', color: '#F4D03F' }}>EL GRAN YO SOY</span> no son simples proyectos audiovisuales, sino instrumentos inspirados por Dios, concebidos para manifestar Su propósito y extender Su Palabra a través de los medios de comunicación.
+                  </p>
+
+                  <p className="leading-relaxed text-center" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', fontSize: '15px', lineHeight: '1.7' }}>
+                    Estos formatos no constituyen productos finales destinados a su comercialización o emisión inmediata, sino que funcionan como expresiones conceptuales del mover de Dios, reflejando la esencia, dinámica y potencial de las futuras producciones que Él inspira en nuestra compañía.
+                  </p>
+
+                  <p className="leading-relaxed text-center" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', fontSize: '15px', lineHeight: '1.7' }}>
+                    Cada proyecto se convierte en una semilla de visión divina, diseñada para proyectar la luz del Reino y servir como guía creativa y estratégica. A través de ellos, buscamos dimensionar el poder transformador de la Palabra de Dios, mostrando cómo Su mensaje puede impactar positivamente las vidas, las comunidades y la cultura contemporánea.
+                  </p>
+
+                  <p className="leading-relaxed text-center" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', fontSize: '15px', lineHeight: '1.7' }}>
+                    Entre los formatos presentados destacan <span style={{ fontWeight: 'bold', color: '#F4D03F' }}>"El Negociador de Trueques"</span> y <span style={{ fontWeight: 'bold', color: '#F4D03F' }}>"El Trabajo de tus Sueños"</span>, ejemplos del compromiso de nuestra productora con la innovación guiada por el Espíritu Santo, el propósito social y la difusión de los valores del Reino mediante la televisión moderna.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl p-10 border-2" style={{ backgroundColor: '#1E4F8F', borderColor: '#F4D03F' }}>
+                <h2 className="text-2xl font-bold mb-5 text-center" style={{ color: '#F4D03F', fontFamily: 'system-ui, sans-serif' }}>
+                  El Negociador de Trueques
+                </h2>
+
+                <div className="space-y-5">
+                  <div className="flex justify-center">
+                    <div className="relative w-full max-w-3xl" style={{ paddingBottom: '42.1875%', height: 0, overflow: 'hidden', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)' }}>
+                      <iframe
+                        src="https://www.youtube.com/embed/1jZHzAV_Buc"
+                        title="El Negociador de Trueques"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          width: '100%',
+                          height: '100%',
+                          borderRadius: '12px'
+                        }}
+                      />
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div className="space-y-4 text-white text-lg">
-                  <p>
-                    ¡La productora cristiana El Gran Yo Soy presenta su nuevo formato televisivo "Celebrando con Jesús"!
-                  </p>
-                  <p>
-                    Buscamos suscriptores que quieran participar y beneficiarse de celebraciones gratuitas en bodas, cumpleaños u otras ocasiones especiales.
-                  </p>
-                  <p>
-                    El ganador será seleccionado a partir del 7 de noviembre, y comenzaremos a grabar su historia o apoyarlo en aquello que necesite, corroborado por el equipo de producción de la productora y aprobado por la audiencia, para que su experiencia se haga manifiesta el 12 de diciembre.
-                  </p>
-                  <p className="font-semibold" style={{ color: '#F4D03F' }}>
-                    ¡No pierdas la oportunidad de ser parte de una historia que inspira y une corazones!
-                  </p>
+              <div className="rounded-2xl p-10 border-2" style={{ backgroundColor: '#1E4F8F', borderColor: '#F4D03F' }}>
+                <h2 className="text-2xl font-bold mb-5 text-center" style={{ color: '#F4D03F', fontFamily: 'system-ui, sans-serif' }}>
+                  El Trabajo de tus Sueños
+                </h2>
+
+                <div className="space-y-5">
+                  <div className="flex justify-center">
+                    <div className="relative w-full max-w-3xl" style={{ paddingBottom: '42.1875%', height: 0, overflow: 'hidden', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)' }}>
+                      <iframe
+                        src="https://www.youtube.com/embed/uLSFFobx0H4"
+                        title="El Trabajo de tus Sueños"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          width: '100%',
+                          height: '100%',
+                          borderRadius: '12px'
+                        }}
+                      />
+                    </div>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
-
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <Card style={{ backgroundColor: '#FFFFFF' }}>
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto" style={{ backgroundColor: '#F4D03F' }}>
-                    <Users className="w-6 h-6" style={{ color: '#1E4F8F' }} />
-                  </div>
-                  <CardTitle className="text-center" style={{ color: '#1E4F8F' }}>
-                    Para Suscriptores
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-center text-gray-700">
-                    Solo suscriptores activos pueden participar en el sorteo del episodio piloto
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card style={{ backgroundColor: '#FFFFFF' }}>
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto" style={{ backgroundColor: '#F4D03F' }}>
-                    <Video className="w-6 h-6" style={{ color: '#1E4F8F' }} />
-                  </div>
-                  <CardTitle className="text-center" style={{ color: '#1E4F8F' }}>
-                    Producción Profesional
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-center text-gray-700">
-                    Tu celebración será grabada con equipos profesionales de alta calidad
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card style={{ backgroundColor: '#FFFFFF' }}>
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto" style={{ backgroundColor: '#F4D03F' }}>
-                    <Heart className="w-6 h-6" style={{ color: '#1E4F8F' }} />
-                  </div>
-                  <CardTitle className="text-center" style={{ color: '#1E4F8F' }}>
-                    100% Gratuito
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-center text-gray-700">
-                    El ganador recibe todo el evento completamente gratis
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <Card className="mb-12" style={{ backgroundColor: '#FFFFFF' }}>
-              <CardHeader>
-                <CardTitle className="text-2xl text-center" style={{ color: '#1E4F8F' }}>
-                  Cómo Participar
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ol className="space-y-4 text-gray-700">
-                  <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold" style={{ backgroundColor: '#F4D03F', color: '#1E4F8F' }}>
-                      1
-                    </span>
-                    <div>
-                      <h3 className="font-bold mb-1" style={{ color: '#1E4F8F' }}>Suscríbete</h3>
-                      <p>Elige uno de nuestros planes de suscripción para ser elegible</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold" style={{ backgroundColor: '#F4D03F', color: '#1E4F8F' }}>
-                      2
-                    </span>
-                    <div>
-                      <h3 className="font-bold mb-1" style={{ color: '#1E4F8F' }}>Mantén tu Suscripción Activa</h3>
-                      <p>Asegúrate de que tu suscripción esté activa antes del 7 de noviembre</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold" style={{ backgroundColor: '#F4D03F', color: '#1E4F8F' }}>
-                      3
-                    </span>
-                    <div>
-                      <h3 className="font-bold mb-1" style={{ color: '#1E4F8F' }}>Espera el Sorteo</h3>
-                      <p>El ganador será anunciado y contactado el 7 de noviembre</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold" style={{ backgroundColor: '#F4D03F', color: '#1E4F8F' }}>
-                      4
-                    </span>
-                    <div>
-                      <h3 className="font-bold mb-1" style={{ color: '#1E4F8F' }}>¡Celebra!</h3>
-                      <p>Tu evento será grabado y transmitido el 12 de diciembre</p>
-                    </div>
-                  </li>
-                </ol>
-              </CardContent>
-            </Card>
-
-            <div className="text-center">
-              <Link href="/suscripciones">
-                <Button
-                  size="lg"
-                  className="text-xl px-12 py-6"
-                  style={{ backgroundColor: '#1E4F8F', color: '#F4D03F' }}
-                >
-                  Ver Planes de Suscripción
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16" style={{ backgroundColor: '#1E4F8F' }}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6" style={{ color: '#F4D03F' }}>
-              ¿Qué Incluye el Episodio Piloto?
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6 text-white text-lg">
-              <div className="flex items-start gap-3">
-                <Star className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: '#F4D03F' }} />
-                <p className="text-left">Grabación profesional de todo el evento</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <Star className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: '#F4D03F' }} />
-                <p className="text-left">Edición y postproducción de alta calidad</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <Star className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: '#F4D03F' }} />
-                <p className="text-left">Difusión en redes sociales y plataformas digitales</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <Star className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: '#F4D03F' }} />
-                <p className="text-left">Recuerdo permanente de tu celebración especial</p>
               </div>
             </div>
           </div>
