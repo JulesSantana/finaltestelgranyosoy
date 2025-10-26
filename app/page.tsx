@@ -88,15 +88,15 @@ export default function Home() {
               </h1>
             </div>
             <div className="relative rounded-lg overflow-hidden" style={{ backgroundColor: '#15304a' }}>
-              <video
-                controls
-                className="w-full h-auto"
-                style={{ maxHeight: '500px', objectFit: 'contain' }}
-                preload="metadata"
-              >
-                <source src="https://drive.google.com/uc?export=download&id=1BuxjDPZex0fi-Di00wUgOZ7ty2s2s6zG" type="video/mp4" />
-                Tu navegador no soporta la reproducción de videos.
-              </video>
+              <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
+                <iframe
+                  src="https://drive.google.com/file/d/1BuxjDPZex0fi-Di00wUgOZ7ty2s2s6zG/preview"
+                  className="absolute top-0 left-0 w-full h-full"
+                  allow="autoplay"
+                  allowFullScreen
+                  style={{ border: 'none' }}
+                />
+              </div>
             </div>
             <div className="mt-4 text-center px-4 space-y-4">
               <Link href="/suscripciones">
