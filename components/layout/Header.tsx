@@ -25,10 +25,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 lg:px-6">
         <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center group -ml-4">
-            <div className="relative h-16 flex-shrink-0" style={{ width: '400px' }}>
+          <Link href="/" className="flex items-center group">
+            <div className="relative h-12 lg:h-16 flex-shrink-0 w-48 sm:w-64 lg:w-96">
               <Image
                 src="/Captura de pantalla 2025-10-25 154517.png"
                 alt="EL GRAN YO SOY"
@@ -110,10 +110,10 @@ export function Header() {
                   variant="ghost"
                   size="icon"
                   aria-label="Abrir menú"
-                  className="touch-manipulation min-h-[44px] min-w-[44px] h-11 w-11 md:h-10 md:w-10 rounded-lg hover:bg-navy/10 active:bg-navy/15 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2"
+                  className="touch-manipulation min-h-[44px] min-w-[44px] h-11 w-11 rounded-lg hover:bg-navy/10 active:bg-navy/15 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2"
                   style={{ color: '#1e4f8f' }}
                 >
-                  <Menu className="h-6 w-6 md:h-5 md:w-5" strokeWidth={2.5} />
+                  <Menu className="h-6 w-6" strokeWidth={2.5} />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-72">

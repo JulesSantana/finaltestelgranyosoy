@@ -24,6 +24,12 @@ export const metadata: Metadata = {
   title: 'EL GRAN YO SOY — Productora de Contenido TV',
   description: 'Productora de contenido televisivo con reconocimiento internacional. Formatos innovadores y producción audiovisual de excelencia.',
   keywords: 'producción audiovisual, contenido televisivo, formatos internacionales, productora TV',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
 };
 
 export default function RootLayout({
