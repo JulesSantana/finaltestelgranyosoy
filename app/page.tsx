@@ -755,7 +755,7 @@ export default function Home() {
                          style={{ borderColor: '#F4D03F', backgroundColor: '#15304a' }}>
                       <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/30 z-10"></div>
                       <Image
-                        src="/ADORACION.jpeg"
+                        src="/ADORACION copy.jpeg"
                         alt="Adoración en vivo"
                         width={400}
                         height={300}
