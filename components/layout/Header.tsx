@@ -39,7 +39,7 @@ export function Header() {
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-6 ml-2">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-6 ml-2 flex-shrink-0">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -60,13 +60,13 @@ export function Header() {
             })}
           </nav>
 
-          <div className="flex items-center gap-6">
-            <div className="hidden lg:flex items-center gap-4">
+          <div className="flex items-center gap-3 xl:gap-6 flex-shrink-0">
+            <div className="hidden lg:flex items-center gap-3">
               <div className="relative">
                 <Input
                   type="search"
                   placeholder=""
-                  className="w-48 h-9 pl-3 pr-10 rounded-full border-gray-300 text-sm"
+                  className="w-32 xl:w-48 h-9 pl-3 pr-10 rounded-full border-gray-300 text-sm"
                 />
                 <button className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400">
                   <X className="h-4 w-4" />
@@ -77,7 +77,7 @@ export function Header() {
               </div>
             </div>
 
-            <div className="hidden lg:flex items-center gap-2">
+            <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
               <button
                 onClick={() => setLanguage('EN')}
                 className={`text-xs font-semibold ${
@@ -99,9 +99,9 @@ export function Header() {
               </button>
             </div>
 
-            <Link href="/mi-cuenta" className="hidden lg:flex items-center gap-2 hover:opacity-70 transition-colors" style={{ color: '#1e4f8f' }}>
+            <Link href="/mi-cuenta" className="hidden lg:flex items-center gap-2 hover:opacity-70 transition-colors flex-shrink-0" style={{ color: '#1e4f8f' }}>
               <User className="h-5 w-5" />
-              <span className="text-xs font-semibold">{t('nav.myAccount')}</span>
+              <span className="text-xs font-semibold whitespace-nowrap">{t('nav.myAccount')}</span>
             </Link>
 
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
