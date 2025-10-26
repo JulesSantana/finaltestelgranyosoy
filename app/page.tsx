@@ -821,7 +821,7 @@ export default function Home() {
                   </div>
 
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                    {['/Imagen de WhatsApp 2025-10-26 a las 13.26.35_0269e88e.jpg', '/image12.jpeg', '/image13.jpeg', '/image14.jpeg'].map((img, idx) => (
+                    {['/Imagen de WhatsApp 2025-10-26 a las 13.26.35_0269e88e.jpg', '/Imagen de WhatsApp 2025-10-26 a las 13.26.35_d727a589.jpg', '/image13.jpeg', '/image14.jpeg'].map((img, idx) => (
                       <div key={idx} className="relative aspect-square overflow-hidden rounded-lg shadow-md cursor-pointer hover:shadow-xl transition-shadow" onClick={() => {
                         const modal = document.getElementById('food-image-modal');
                         const modalImg = document.getElementById('food-modal-image') as HTMLImageElement;
