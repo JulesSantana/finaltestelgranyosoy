@@ -14,7 +14,7 @@ function initializeSupabase(): SupabaseClient {
     console.error('Supabase environment variables are missing');
 
     return createClient(
-      'https://placeholder.supabase.co',
+      'https://mifubfrrjpqdnzizjocy.supabase.co',
       'placeholder-key'
     );
   }
