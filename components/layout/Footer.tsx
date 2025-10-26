@@ -112,14 +112,6 @@ export function Footer() {
                   className="object-contain transition-all duration-300 group-hover:brightness-125"
                 />
               </a>
-              <a
-                href="https://www.instagram.com/luminaweb.design"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 hover:scale-110 transition-all duration-300"
-              >
-                <Instagram className="w-6 h-6" style={{ color: '#F4D03F' }} />
-              </a>
             </div>
           </div>
         </div>
