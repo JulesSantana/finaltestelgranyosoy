@@ -87,24 +87,16 @@ export default function Home() {
                 Celebrando con Jesús
               </h1>
             </div>
-            <div className="relative h-[500px] flex items-center justify-center rounded-lg overflow-hidden" style={{ backgroundColor: '#15304a' }}>
-              <div className="relative z-10 text-center px-4 max-w-2xl mx-auto">
-                <div className="mb-8">
-                  <div className="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(244, 208, 63, 0.2)', border: '3px solid #F4D03F' }}>
-                    <Video className="w-12 h-12" style={{ color: '#F4D03F' }} />
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                    Video Próximamente
-                  </h3>
-                  <p className="text-lg text-white/80 mb-6">
-                    Estamos preparando contenido exclusivo para ti
-                  </p>
-                  <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full" style={{ backgroundColor: 'rgba(244, 208, 63, 0.15)', border: '1px solid rgba(244, 208, 63, 0.3)' }}>
-                    <Sparkles className="w-5 h-5" style={{ color: '#F4D03F' }} />
-                    <span className="text-white font-medium">Contenido en producción</span>
-                  </div>
-                </div>
-              </div>
+            <div className="relative rounded-lg overflow-hidden" style={{ backgroundColor: '#15304a' }}>
+              <video
+                controls
+                className="w-full h-auto"
+                style={{ maxHeight: '500px', objectFit: 'contain' }}
+                preload="metadata"
+              >
+                <source src="https://drive.google.com/uc?export=download&id=1BuxjDPZex0fi-Di00wUgOZ7ty2s2s6zG" type="video/mp4" />
+                Tu navegador no soporta la reproducción de videos.
+              </video>
             </div>
             <div className="mt-4 text-center px-4 space-y-4">
               <Link href="/suscripciones">
