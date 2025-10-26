@@ -24,7 +24,7 @@ export default function NosotrosPage() {
             <div className="absolute inset-0 grid grid-cols-2 gap-3 p-3 opacity-50">
               <div className="relative h-full">
                 <Image
-                  src="/Material-audiovisual-para-producciones-profesionales.webp"
+                  src="/Material-audiovisual-para-producciones-profesionales copy.webp"
                   alt="Producción audiovisual"
                   fill
                   className="object-cover rounded-xl"
