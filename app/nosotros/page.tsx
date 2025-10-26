@@ -75,7 +75,7 @@ export default function NosotrosPage() {
             <div className="flex items-start gap-6">
               <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 shadow-md" style={{ backgroundColor: '#C9A961' }}>
                 <Image
-                  src="/image0(21).jpeg"
+                  src="/Imagen de WhatsApp 2025-10-25 a las 15.55.32_f3718f2b.jpg"
                   alt="Allen Euclides"
                   width={64}
                   height={64}
