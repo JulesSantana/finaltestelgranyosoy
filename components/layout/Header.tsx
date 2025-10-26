@@ -126,12 +126,11 @@ export function Header() {
                         href={item.href}
                         onClick={() => setIsOpen(false)}
                         aria-current={isActive ? 'page' : undefined}
-                        className={`px-6 py-4 text-lg font-semibold transition-colors rounded-xl touch-manipulation ${
-                          isActive
-                            ? 'bg-navy/10'
-                            : 'hover:bg-navy/5'
-                        }`}
-                        style={{ color: '#1e4f8f' }}
+                        className="px-6 py-4 text-lg font-semibold transition-colors rounded-xl touch-manipulation hover:bg-gray-100"
+                        style={{
+                          color: '#1e4f8f',
+                          backgroundColor: isActive ? 'rgba(30, 79, 143, 0.1)' : 'transparent'
+                        }}
                       >
                         {item.label}
                       </Link>
@@ -140,7 +139,7 @@ export function Header() {
                   <div className="border-t pt-6 mt-4" style={{ borderColor: '#1e4f8f33' }}>
                     <Link
                       href="/mi-cuenta"
-                      className="flex items-center gap-3 px-6 py-4 rounded-xl hover:bg-navy/5 touch-manipulation"
+                      className="flex items-center gap-3 px-6 py-4 rounded-xl touch-manipulation hover:bg-gray-100 transition-colors"
                       onClick={() => setIsOpen(false)}
                       style={{ color: '#1e4f8f' }}
                     >
@@ -153,10 +152,12 @@ export function Header() {
                           setLanguage('ES');
                           setIsOpen(false);
                         }}
-                        className={`text-lg font-semibold px-4 py-2 rounded-lg touch-manipulation ${
-                          language === 'ES' ? 'bg-navy/10' : 'opacity-50'
-                        }`}
-                        style={{ color: '#1e4f8f' }}
+                        className="text-lg font-semibold px-4 py-2 rounded-lg touch-manipulation hover:bg-gray-100 transition-colors"
+                        style={{
+                          color: '#1e4f8f',
+                          backgroundColor: language === 'ES' ? 'rgba(30, 79, 143, 0.1)' : 'transparent',
+                          opacity: language === 'ES' ? 1 : 0.5
+                        }}
                       >
                         ES
                       </button>
@@ -165,10 +166,12 @@ export function Header() {
                           setLanguage('EN');
                           setIsOpen(false);
                         }}
-                        className={`text-lg font-semibold px-4 py-2 rounded-lg touch-manipulation ${
-                          language === 'EN' ? 'bg-navy/10' : 'opacity-50'
-                        }`}
-                        style={{ color: '#1e4f8f' }}
+                        className="text-lg font-semibold px-4 py-2 rounded-lg touch-manipulation hover:bg-gray-100 transition-colors"
+                        style={{
+                          color: '#1e4f8f',
+                          backgroundColor: language === 'EN' ? 'rgba(30, 79, 143, 0.1)' : 'transparent',
+                          opacity: language === 'EN' ? 1 : 0.5
+                        }}
                       >
                         EN
                       </button>
