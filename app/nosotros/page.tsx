@@ -32,7 +32,7 @@ export default function NosotrosPage() {
               </div>
               <div className="relative h-full">
                 <Image
-                  src="/camara.webp"
+                  src="/camara copy.webp"
                   alt="Cámara de producción"
                   fill
                   className="object-cover rounded-xl"
