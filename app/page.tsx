@@ -704,7 +704,7 @@ export default function Home() {
                 <div className="flex justify-center mb-6">
                   <div className="w-full max-w-2xl rounded-lg overflow-hidden shadow-md">
                     <Image
-                      src="/DORACION.jpg"
+                      src="/Imagen de WhatsApp 2025-10-26 a las 13.26.36_26a29e8c.jpg"
                       alt="Lugar de adoración y testimonio"
                       width={800}
                       height={450}
