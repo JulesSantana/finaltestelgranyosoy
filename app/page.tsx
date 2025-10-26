@@ -112,7 +112,7 @@ export default function Home() {
                 <Link href="/celebrando-con-jesus">
                   <Button
                     size="lg"
-                    className="bg-white hover:bg-gray-50 rounded-full px-10 py-6 text-base font-semibold shadow-xl transition-all"
+                    className="bg-white hover:bg-gray-50 rounded-full px-6 sm:px-10 py-6 text-sm sm:text-base font-semibold shadow-xl transition-all whitespace-normal sm:whitespace-nowrap"
                     style={{ color: '#1e4f8f' }}
                   >
                     PREMIOS HASTA EL 7 DE NOVIEMBRE
