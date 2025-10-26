@@ -259,7 +259,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center h-full" style={{ minHeight: '600px' }}>
               <div className="relative bg-transparent animate-fade-in-up hover:scale-105 transition-all duration-500 group">
                 <Image
-                  src="/image5(1) copy copy copy copy copy copy copy copy.jpeg"
+                  src="/image.png"
                   alt="El Gran Yo Soy"
                   width={400}
                   height={64}
