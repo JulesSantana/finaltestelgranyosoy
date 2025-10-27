@@ -72,11 +72,11 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
         <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4">
           <button
             onClick={prevSlide}
-            className="z-10 p-2 sm:p-2.5 md:p-3 rounded-full transition-all hover:scale-110 flex-shrink-0 touch-manipulation min-w-[44px] min-h-[44px]"
-            style={{ backgroundColor: '#FF6B00', color: 'white' }}
+            className="z-10 p-1.5 sm:p-2 md:p-2.5 rounded-full transition-all hover:scale-110 flex-shrink-0"
+            style={{ backgroundColor: '#f59e0b', color: 'white' }}
             aria-label="Previous image"
           >
-            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
 
           <div className="flex items-center gap-2 sm:gap-3 md:gap-4 overflow-hidden justify-center flex-1 max-w-[250px] sm:max-w-[400px] md:max-w-[600px]">
@@ -121,11 +121,11 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
 
           <button
             onClick={nextSlide}
-            className="z-10 p-2 sm:p-2.5 md:p-3 rounded-full transition-all hover:scale-110 flex-shrink-0 touch-manipulation min-w-[44px] min-h-[44px]"
-            style={{ backgroundColor: '#FF6B00', color: 'white' }}
+            className="z-10 p-1.5 sm:p-2 md:p-2.5 rounded-full transition-all hover:scale-110 flex-shrink-0"
+            style={{ backgroundColor: '#f59e0b', color: 'white' }}
             aria-label="Next image"
           >
-            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>
 
@@ -138,7 +138,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
                 index === currentIndex ? 'w-6 sm:w-8' : 'w-2'
               }`}
               style={{
-                backgroundColor: index === currentIndex ? '#FF6B00' : '#1E4F8F40',
+                backgroundColor: index === currentIndex ? '#f59e0b' : '#1E4F8F40',
               }}
               aria-label={`Go to image ${index + 1}`}
             />
@@ -154,11 +154,11 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
         >
           <button
             onClick={closeFullScreen}
-            className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 z-50 p-2.5 sm:p-3 md:p-3.5 rounded-full transition-all hover:scale-110 touch-manipulation min-w-[48px] min-h-[48px]"
-            style={{ backgroundColor: '#FF6B00', color: 'white' }}
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 z-50 p-2 sm:p-2.5 md:p-3 rounded-full transition-all hover:scale-110"
+            style={{ backgroundColor: '#f59e0b', color: 'white' }}
             aria-label="Close fullscreen"
           >
-            <X className="w-6 h-6 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+            <X className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6" />
           </button>
 
           <button
@@ -166,11 +166,11 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
               e.stopPropagation();
               prevFullScreen();
             }}
-            className="absolute left-2 sm:left-4 md:left-6 z-50 p-2.5 sm:p-3 md:p-3.5 rounded-full transition-all hover:scale-110 touch-manipulation min-w-[48px] min-h-[48px]"
-            style={{ backgroundColor: '#FF6B00', color: 'white' }}
+            className="absolute left-2 sm:left-4 md:left-6 z-50 p-2 sm:p-2.5 md:p-3 rounded-full transition-all hover:scale-110"
+            style={{ backgroundColor: '#f59e0b', color: 'white' }}
             aria-label="Previous image"
           >
-            <ChevronLeft className="w-6 h-6 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+            <ChevronLeft className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6" />
           </button>
 
           <div
@@ -183,8 +183,8 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
             <div
               className="relative w-full h-full"
               style={{
-                boxShadow: '0 0 20px 5px rgba(255, 107, 0, 0.6), 0 0 40px 10px rgba(255, 107, 0, 0.4)',
-                border: '3px solid #FF6B00',
+                boxShadow: '0 0 20px 5px rgba(245, 158, 11, 0.6), 0 0 40px 10px rgba(245, 158, 11, 0.4)',
+                border: '3px solid #f59e0b',
                 borderRadius: '8px',
                 overflow: 'hidden',
               }}
@@ -205,11 +205,11 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
               e.stopPropagation();
               nextFullScreen();
             }}
-            className="absolute right-2 sm:right-4 md:right-6 z-50 p-2.5 sm:p-3 md:p-3.5 rounded-full transition-all hover:scale-110 touch-manipulation min-w-[48px] min-h-[48px]"
-            style={{ backgroundColor: '#FF6B00', color: 'white' }}
+            className="absolute right-2 sm:right-4 md:right-6 z-50 p-2 sm:p-2.5 md:p-3 rounded-full transition-all hover:scale-110"
+            style={{ backgroundColor: '#f59e0b', color: 'white' }}
             aria-label="Next image"
           >
-            <ChevronRight className="w-6 h-6 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+            <ChevronRight className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6" />
           </button>
 
           <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 text-white text-sm sm:text-base md:text-lg font-semibold bg-black/50 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full">

@@ -40,8 +40,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-8 px-4" style={{ backgroundColor: '#D4BC8B' }}>
-      <Card className="w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#D4BC8B' }}>
+      <Card className="w-full max-w-md mx-4">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center text-navy">
             {t('login.title')}
@@ -67,7 +67,6 @@ export default function LoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 disabled={loading}
-                className="min-h-[52px]"
               />
             </div>
             <div className="space-y-2">
@@ -81,7 +80,6 @@ export default function LoginPage() {
                 required
                 disabled={loading}
                 minLength={8}
-                className="min-h-[52px]"
               />
             </div>
             <div className="flex items-center justify-between">
@@ -91,7 +89,7 @@ export default function LoginPage() {
             </div>
             <Button
               type="submit"
-              className="w-full bg-navy text-white hover:bg-navy/90 min-h-[52px] touch-manipulation"
+              className="w-full bg-navy text-white hover:bg-navy/90"
               disabled={loading}
             >
               {loading ? 'Iniciando sesión...' : t('login.button')}
