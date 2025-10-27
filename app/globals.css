@@ -6,7 +6,7 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   @media (min-width: 768px) {
@@ -19,18 +19,6 @@
     overflow-x: hidden;
     width: 100%;
     position: relative;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  * {
-    box-sizing: border-box;
-    max-width: 100%;
-  }
-
-  img, video, iframe {
-    max-width: 100%;
-    height: auto;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -39,47 +27,15 @@
   }
 
   h1 {
-    font-size: 1.75rem;
     line-height: 1.2;
   }
 
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 2.5rem;
-    }
-  }
-
-  h2 {
-    font-size: 1.5rem;
+  h2, h3 {
     line-height: 1.2;
-  }
-
-  @media (min-width: 768px) {
-    h2 {
-      font-size: 2rem;
-    }
-  }
-
-  h3 {
-    font-size: 1.25rem;
-    line-height: 1.2;
-  }
-
-  @media (min-width: 768px) {
-    h3 {
-      font-size: 1.5rem;
-    }
   }
 
   p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  button, a {
-    min-height: 48px;
-    min-width: 48px;
-    touch-action: manipulation;
+    line-height: 1.5;
   }
 }
 
