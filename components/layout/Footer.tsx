@@ -14,11 +14,11 @@ const quickLinks = [
 export function Footer() {
   return (
     <footer className="text-white" style={{ backgroundColor: '#1E4F8F' }}>
-      <div className="container mx-auto px-4 md:px-6 py-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <Link href="/" className="group mb-4 md:mb-6 inline-block">
-              <div className="relative w-48 md:w-56 lg:w-64 h-12 md:h-14 lg:h-16 transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_15px_rgba(244,208,63,0.5)]">
+            <Link href="/" className="group mb-6 inline-block">
+              <div className="relative w-64 h-16 transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_15px_rgba(244,208,63,0.5)]">
                 <Image
                   src="/image copy copy copy.png"
                   alt="EL GRAN YO SOY"
@@ -30,22 +30,22 @@ export function Footer() {
                 />
               </div>
             </Link>
-            <p className="text-sm md:text-base leading-relaxed mb-3 md:mb-4 mt-4 md:mt-6" style={{ color: '#F4D03F' }}>
+            <p className="text-sm leading-relaxed mb-4 mt-6" style={{ color: '#F4D03F' }}>
               Productora de contenido televisivo con reconocimiento internacional.
             </p>
-            <p className="text-xs md:text-sm italic" style={{ color: '#F4D03F', opacity: 0.7 }}>
+            <p className="text-xs italic" style={{ color: '#F4D03F', opacity: 0.7 }}>
               En desarrollo — Próximamente más contenido
             </p>
           </div>
 
           <div>
-            <h3 className="font-heading text-base md:text-lg font-semibold mb-3 md:mb-4" style={{ color: '#F4D03F' }}>Enlaces Rápidos</h3>
-            <ul className="space-y-2 md:space-y-3">
+            <h3 className="font-heading text-lg font-semibold mb-4" style={{ color: '#F4D03F' }}>Enlaces Rápidos</h3>
+            <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="hover:text-gold transition-colors text-sm md:text-base inline-block min-h-[44px] flex items-center"
+                    className="hover:text-gold transition-colors text-sm"
                     style={{ color: '#F4D03F' }}
                   >
                     {link.label}
@@ -56,9 +56,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading text-base md:text-lg font-semibold mb-3 md:mb-4" style={{ color: '#F4D03F' }}>Contacto</h3>
-            <ul className="space-y-3 md:space-y-4">
-              <li className="flex items-start gap-3 text-sm md:text-base">
+            <h3 className="font-heading text-lg font-semibold mb-4" style={{ color: '#F4D03F' }}>Contacto</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3 text-sm">
                 <Mail className="h-5 w-5 flex-shrink-0 mt-0.5" style={{ color: '#F4D03F' }} />
                 <a href="mailto:Producciones@elgranyosoytv.com" className="hover:text-gold transition-colors break-all" style={{ color: '#F4D03F' }}>
                   Producciones@elgranyosoytv.com
@@ -84,26 +84,26 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t pt-6 md:pt-8" style={{ borderColor: '#F4D03F' }}>
+        <div className="border-t pt-8" style={{ borderColor: '#F4D03F' }}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
-            <p className="text-xs md:text-sm text-center" style={{ color: '#F4D03F' }}>
+            <p className="text-sm" style={{ color: '#F4D03F' }}>
               © {new Date().getFullYear()} EL GRAN YO SOY. Todos los derechos reservados.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-center">
-              <Link href="#" className="hover:text-gold transition-colors text-xs md:text-sm min-h-[44px] flex items-center justify-center" style={{ color: '#F4D03F' }}>
+            <div className="flex gap-6">
+              <Link href="#" className="hover:text-gold transition-colors text-sm" style={{ color: '#F4D03F' }}>
                 Política de Privacidad
               </Link>
-              <Link href="#" className="hover:text-gold transition-colors text-xs md:text-sm min-h-[44px] flex items-center justify-center" style={{ color: '#F4D03F' }}>
+              <Link href="#" className="hover:text-gold transition-colors text-sm" style={{ color: '#F4D03F' }}>
                 Términos de Uso
               </Link>
             </div>
           </div>
           <div className="flex justify-center items-center pt-4 border-t" style={{ borderColor: '#F4D03F' }}>
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
-              <span className="text-xs md:text-sm" style={{ color: '#F4D03F' }}>Diseñado por</span>
+            <div className="flex items-center gap-4">
+              <span className="text-sm" style={{ color: '#F4D03F' }}>Diseñado por</span>
               <a
                 href="mailto:luminaweb.design@gmail.com"
-                className="relative w-40 md:w-48 h-12 md:h-16 block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_rgba(244,208,63,0.6)] cursor-pointer group"
+                className="relative w-48 h-16 block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_rgba(244,208,63,0.6)] cursor-pointer group"
               >
                 <Image
                   src="/logo.png"

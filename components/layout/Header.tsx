@@ -28,7 +28,7 @@ export function Header() {
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex h-20 items-center justify-between gap-2">
           <Link href="/" className="flex items-center group flex-shrink-0">
-            <div className="relative h-14 sm:h-12 lg:h-14 w-48 sm:w-52 lg:w-64">
+            <div className="relative h-12 lg:h-14 w-40 sm:w-52 lg:w-64">
               <Image
                 src="/Captura de pantalla 2025-10-25 154517.png"
                 alt="EL GRAN YO SOY"
