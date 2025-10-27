@@ -32,6 +32,19 @@ export const metadata: Metadata = {
   },
 };
 
+function RootLayoutClient({ children }: { children: React.ReactNode }) {
+  return (
+    <LanguageProvider>
+      <AuthProvider>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <Toaster />
+      </AuthProvider>
+    </LanguageProvider>
+  );
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -40,14 +53,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} ${poppins.variable}`}>
       <body className={inter.className}>
-        <LanguageProvider>
-          <AuthProvider>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-            <Toaster />
-          </AuthProvider>
-        </LanguageProvider>
+        <RootLayoutClient>{children}</RootLayoutClient>
       </body>
     </html>
   );
