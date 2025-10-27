@@ -91,19 +91,16 @@ export default function Home() {
               <div className="relative w-full h-full" style={{ paddingTop: '56.25%', minHeight: '250px' }}>
                 <iframe
                   src="https://drive.google.com/file/d/1BuxjDPZex0fi-Di00wUgOZ7ty2s2s6zG/preview"
-                  className="absolute top-0 left-0 w-full h-full"
+                  className="absolute left-0 w-full"
                   allow="autoplay"
                   allowFullScreen
-                  style={{ border: 'none', minHeight: '250px' }}
-                  title="Video Celebrando con Jesús"
-                />
-                <div
-                  className="absolute top-0 right-0 bg-black pointer-events-none z-10"
                   style={{
-                    width: '80px',
-                    height: '50px',
-                    background: '#15304a'
+                    border: 'none',
+                    minHeight: '250px',
+                    top: '-40px',
+                    height: 'calc(100% + 40px)'
                   }}
+                  title="Video Celebrando con Jesús"
                 />
               </div>
             </div>
