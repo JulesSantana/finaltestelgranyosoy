@@ -43,9 +43,9 @@ export default function Home() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#F4D03F' }}>
       <section className="relative overflow-hidden" style={{ backgroundColor: '#F4D03F' }}>
-        <div className="container mx-auto px-4 md:px-6 pt-6 md:pt-8" style={{ backgroundColor: '#F4D03F' }}>
-          <div className="bg-white rounded-xl shadow-lg p-4 md:p-6">
-            <div className="mb-6 text-center">
+        <div className="container mx-auto px-4 md:px-6 pt-4 md:pt-6" style={{ backgroundColor: '#F4D03F' }}>
+          <div className="bg-white rounded-xl shadow-lg p-4 sm:p-5 md:p-6">
+            <div className="mb-4 sm:mb-5 md:mb-6 text-center">
               <style jsx>{`
                 @keyframes shimmer {
                   0% {
@@ -77,7 +77,7 @@ export default function Home() {
                           drop-shadow(0 0 30px rgba(244, 208, 63, 0.2));
                 }
               `}</style>
-              <h1 className="elegant-title text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight" style={{
+              <h1 className="elegant-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight" style={{
                 fontFamily: 'system-ui, sans-serif',
                 padding: '8px 0',
                 letterSpacing: '0.02em',
@@ -87,23 +87,23 @@ export default function Home() {
                 Celebrando con Jesús
               </h1>
             </div>
-            <div className="relative rounded-lg overflow-hidden" style={{ backgroundColor: '#15304a', minHeight: '200px' }}>
-              <div className="relative w-full h-full" style={{ paddingTop: '56.25%', minHeight: '200px' }}>
+            <div className="relative rounded-lg overflow-hidden w-full" style={{ backgroundColor: '#15304a' }}>
+              <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
                 <iframe
                   src="https://drive.google.com/file/d/1BuxjDPZex0fi-Di00wUgOZ7ty2s2s6zG/preview"
                   className="absolute top-0 left-0 w-full h-full"
                   allow="autoplay"
                   allowFullScreen
-                  style={{ border: 'none', minHeight: '250px' }}
+                  style={{ border: 'none' }}
                   title="Video Celebrando con Jesús"
                 />
               </div>
             </div>
-            <div className="mt-4 text-center space-y-3 px-2">
+            <div className="mt-4 sm:mt-5 md:mt-6 text-center space-y-3 px-0">
               <Link href="/suscripciones" className="block">
                 <Button
                   size="lg"
-                  className="bg-white hover:bg-gray-50 rounded-full w-full max-w-md mx-auto px-6 py-4 min-h-[52px] text-sm sm:text-base font-semibold shadow-xl transition-all touch-manipulation"
+                  className="bg-white hover:bg-gray-50 rounded-full w-full max-w-md mx-auto px-6 py-4 min-h-[56px] text-base sm:text-lg font-semibold shadow-xl transition-all touch-manipulation"
                   style={{ color: '#1e4f8f' }}
                 >
                   MODO DE SUSCRIPCION
@@ -112,7 +112,7 @@ export default function Home() {
               <Link href="/celebrando-con-jesus" className="block">
                 <Button
                   size="lg"
-                  className="bg-white hover:bg-gray-50 rounded-full w-full max-w-md mx-auto px-6 py-4 min-h-[52px] text-sm sm:text-base font-semibold shadow-xl transition-all touch-manipulation"
+                  className="bg-white hover:bg-gray-50 rounded-full w-full max-w-md mx-auto px-6 py-4 min-h-[56px] text-base sm:text-lg font-semibold shadow-xl transition-all touch-manipulation"
                   style={{ color: '#1e4f8f' }}
                 >
                   PREMIOS HASTA EL 7 DE NOVIEMBRE
@@ -123,8 +123,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative py-12 md:py-20 lg:py-32 overflow-hidden" style={{ backgroundColor: '#F4D03F' }}>
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="relative py-8 sm:py-12 md:py-16 lg:py-24 overflow-hidden" style={{ backgroundColor: '#F4D03F' }}>
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-7xl mx-auto">
 
             <div className="flex flex-col">
@@ -160,12 +160,12 @@ export default function Home() {
                             drop-shadow(0 0 30px rgba(96, 165, 250, 0.4));
                   }
                 `}</style>
-                <p className="shiny-blue-text text-base sm:text-lg md:text-xl lg:text-2xl font-bold tracking-wide px-2">
+                <p className="shiny-blue-text text-lg sm:text-xl md:text-2xl font-bold tracking-wide px-2">
                   La sección que te conecta y premia en celebrando con Jesús
                 </p>
               </div>
               <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 md:p-8 flex flex-col h-full">
-                <h3 className="text-2xl font-bold mb-6 text-center cursor-pointer hover:opacity-80 transition-opacity" style={{ color: '#1E4F8F' }} onClick={() => {
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-5 md:mb-6 text-center cursor-pointer hover:opacity-80 transition-opacity" style={{ color: '#1E4F8F' }} onClick={() => {
                   const modal = document.getElementById('streaming-modal');
                   if (modal) modal.style.display = 'flex';
                 }}>Streaming</h3>
@@ -174,7 +174,7 @@ export default function Home() {
                   if (modal) modal.style.display = 'flex';
                 }}>
                   <div className="text-left text-white space-y-4">
-                    <h2 className="text-lg font-bold text-center mb-3" style={{ color: '#F4D03F' }}>
+                    <h2 className="text-base sm:text-lg md:text-xl font-bold text-center mb-3" style={{ color: '#F4D03F' }}>
                       BASES OFICIALES DE PARTICIPACIÓN
                     </h2>
 
@@ -207,35 +207,35 @@ export default function Home() {
                                 drop-shadow(0 0 24px rgba(255, 255, 255, 0.4));
                       }
                     `}</style>
-                    <p className="shining-text text-sm text-center mb-4 font-semibold">
+                    <p className="shining-text text-sm sm:text-base text-center mb-4 font-semibold">
                       Programa: "Celebrando con Jesús" – Sección: "Si me ves, ganas"
                     </p>
 
-                    <div className="space-y-3 text-sm leading-relaxed">
+                    <div className="space-y-3 text-sm sm:text-base leading-relaxed">
                       <div>
-                        <h3 className="font-bold mb-1 text-sm" style={{ color: '#F4D03F' }}>1. Objeto</h3>
-                        <p className="text-[12px] leading-relaxed">El presente documento establece las normas que regulan la participación de concursantes en la sección "Si me ves, ganas", dentro del formato televisivo "Celebrando con Jesús".</p>
+                        <h3 className="font-bold mb-1 text-sm sm:text-base" style={{ color: '#F4D03F' }}>1. Objeto</h3>
+                        <p className="text-sm sm:text-base leading-relaxed">El presente documento establece las normas que regulan la participación de concursantes en la sección "Si me ves, ganas", dentro del formato televisivo "Celebrando con Jesús".</p>
                       </div>
 
                       <div>
-                        <h3 className="font-bold mb-1 text-sm" style={{ color: '#F4D03F' }}>2. Selección de concursantes</h3>
-                        <p className="text-[12px] leading-relaxed mb-1">2.1. Los concursantes deberán visualizar el streaming "Si me ves, ganas", emitido al finalizar el programa televisivo principal.</p>
-                        <p className="text-[12px] leading-relaxed mb-1">2.2. Durante la transmisión, se realizará un sorteo ("el bombo") mediante el cual se seleccionará al concursante ganador.</p>
-                        <p className="text-[12px] leading-relaxed">2.3. El participante seleccionado deberá responder la videollamada. En caso de no contestar, perderá su oportunidad.</p>
+                        <h3 className="font-bold mb-1 text-sm sm:text-base" style={{ color: '#F4D03F' }}>2. Selección de concursantes</h3>
+                        <p className="text-sm sm:text-base leading-relaxed mb-1">2.1. Los concursantes deberán visualizar el streaming "Si me ves, ganas", emitido al finalizar el programa televisivo principal.</p>
+                        <p className="text-sm sm:text-base leading-relaxed mb-1">2.2. Durante la transmisión, se realizará un sorteo ("el bombo") mediante el cual se seleccionará al concursante ganador.</p>
+                        <p className="text-sm sm:text-base leading-relaxed">2.3. El participante seleccionado deberá responder la videollamada. En caso de no contestar, perderá su oportunidad.</p>
                       </div>
 
                       <div>
-                        <h3 className="font-bold mb-1 text-sm" style={{ color: '#F4D03F' }}>3. Obligaciones del concursante</h3>
-                        <p className="text-[12px] leading-relaxed">3.1. Los concursantes deberán exponer su testimonio personal, compartiendo cómo Dios ha obrado en su vida.</p>
+                        <h3 className="font-bold mb-1 text-sm sm:text-base" style={{ color: '#F4D03F' }}>3. Obligaciones del concursante</h3>
+                        <p className="text-sm sm:text-base leading-relaxed">3.1. Los concursantes deberán exponer su testimonio personal, compartiendo cómo Dios ha obrado en su vida.</p>
                       </div>
 
                       <div>
-                        <h3 className="font-bold mb-1 text-sm" style={{ color: '#F4D03F' }}>4. Producción del evento</h3>
-                        <p className="text-[12px] leading-relaxed">El equipo de producción se desplazará hasta el país de residencia del ganador para llevar a cabo el evento.</p>
+                        <h3 className="font-bold mb-1 text-sm sm:text-base" style={{ color: '#F4D03F' }}>4. Producción del evento</h3>
+                        <p className="text-sm sm:text-base leading-relaxed">El equipo de producción se desplazará hasta el país de residencia del ganador para llevar a cabo el evento.</p>
                       </div>
 
                       <div className="text-center pt-2">
-                        <p className="text-sm italic" style={{ color: '#F4D03F' }}>
+                        <p className="text-sm sm:text-base italic" style={{ color: '#F4D03F' }}>
                           Haz clic para ver las bases completas
                         </p>
                       </div>
@@ -301,7 +301,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 md:p-8 flex flex-col h-full">
-                <h3 className="text-2xl font-bold mb-6 text-center cursor-pointer hover:opacity-80 transition-opacity" style={{ color: '#1E4F8F' }} onClick={() => {
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-5 md:mb-6 text-center cursor-pointer hover:opacity-80 transition-opacity" style={{ color: '#1E4F8F' }} onClick={() => {
                   const modal = document.getElementById('necesidades-modal');
                   if (modal) modal.style.display = 'flex';
                 }}>Necesidades</h3>
@@ -310,35 +310,35 @@ export default function Home() {
                   if (modal) modal.style.display = 'flex';
                 }}>
                   <div className="text-left text-white space-y-4">
-                    <p className="leading-relaxed text-[12px]">
+                    <p className="leading-relaxed text-sm sm:text-base">
                       Al final de cada emisión, se realizará un sorteo —mediante un bombo— para seleccionar a uno de los suscriptores.
                     </p>
 
-                    <p className="leading-relaxed text-[12px]">
+                    <p className="leading-relaxed text-sm sm:text-base">
                       La persona elegida tendrá la oportunidad de compartir una petición relacionada con alguna área de su vida en la que necesite el favor y la ayuda de Dios.
                     </p>
 
-                    <p className="leading-relaxed text-[12px]">
+                    <p className="leading-relaxed text-sm sm:text-base">
                       Como muestra del amor y la provisión divina, recibirá un bono de 50 mil euros, el cual no se entregará en efectivo, sino que será utilizado para cubrir directamente sus necesidades, conforme a lo que está escrito:
                     </p>
 
-                    <p className="italic text-center text-sm" style={{ color: '#F4D03F' }}>
+                    <p className="italic text-center text-sm sm:text-base" style={{ color: '#F4D03F' }}>
                       "Mi Dios, pues, suplirá todo lo que os falta conforme a sus riquezas en gloria en Cristo Jesús."<br />
                       — Filipenses 4:19
                     </p>
 
-                    <p className="leading-relaxed text-[12px]">
+                    <p className="leading-relaxed text-sm sm:text-base">
                       Si el suscriptor no llega a utilizar el bono adjudicado en su totalidad, podrá destinar el restante para bendecir a un amigo, familiar o prójimo que también esté pasando por un momento de necesidad.
                     </p>
 
                     <div className="space-y-2">
-                      <p className="font-bold text-sm" style={{ color: '#F4D03F' }}>Categorías de Ayuda:</p>
-                      <p className="text-[12px]">1. Salud • 2. Educación • 3. Vivienda</p>
-                      <p className="text-[12px]">4. Emprendimiento • 5. Emergencias • 6. Otros motivos</p>
+                      <p className="font-bold text-sm sm:text-base" style={{ color: '#F4D03F' }}>Categorías de Ayuda:</p>
+                      <p className="text-sm sm:text-base">1. Salud • 2. Educación • 3. Vivienda</p>
+                      <p className="text-sm sm:text-base">4. Emprendimiento • 5. Emergencias • 6. Otros motivos</p>
                     </div>
 
                     <div className="flex-grow flex items-center justify-center">
-                      <p className="text-sm italic text-center" style={{ color: '#F4D03F' }}>
+                      <p className="text-sm sm:text-base italic text-center" style={{ color: '#F4D03F' }}>
                         Haz clic para ver las bases completas
                       </p>
                     </div>
@@ -655,18 +655,18 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="py-12" style={{ backgroundColor: '#F4D03F' }}>
-        <div className="container mx-auto px-4">
+      <section className="py-8 sm:py-12 md:py-16" style={{ backgroundColor: '#F4D03F' }}>
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-6xl font-bold mb-4" style={{
+            <div className="text-center mb-10 sm:mb-12 md:mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style={{
                 color: '#FFFFFF',
                 fontFamily: 'system-ui, sans-serif',
                 textShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4)'
               }}>
                 ¿QUÉ ES CELEBRANDO CON JESÚS?
               </h2>
-              <p className="text-lg mb-2" style={{ color: '#1E4F8F', fontFamily: 'system-ui, sans-serif' }}>
+              <p className="text-base sm:text-lg md:text-xl mb-2" style={{ color: '#1E4F8F', fontFamily: 'system-ui, sans-serif' }}>
                 Formato Televisivo Online Internacional
               </p>
               <div className="flex justify-center">
@@ -674,21 +674,21 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div className="rounded-2xl p-10 border-2" style={{ backgroundColor: '#1E4F8F', borderColor: '#1E4F8F40' }}>
-                <h2 className="text-2xl font-bold text-center mb-6" style={{ color: '#F4D03F' }}>
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
+              <div className="rounded-2xl p-6 sm:p-8 md:p-10 border-2" style={{ backgroundColor: '#1E4F8F', borderColor: '#1E4F8F40' }}>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-6" style={{ color: '#F4D03F' }}>
                   Descripción
                 </h2>
-                <p className="leading-relaxed mb-4 text-center" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', fontSize: '15px', lineHeight: '1.7' }}>
+                <p className="leading-relaxed mb-4 text-center text-base sm:text-lg" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', lineHeight: '1.7' }}>
                   <span style={{ color: '#FFFFFF', fontWeight: 'bold', textShadow: '0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4)' }}>"Celebrando con Jesús"</span> no es solo un programa… ¡es una experiencia de fe, amor y esperanza que está transformando vidas en todo el mundo!
                 </p>
-                <p className="leading-relaxed mb-4 text-center" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', fontSize: '15px', lineHeight: '1.7' }}>
+                <p className="leading-relaxed mb-4 text-center text-base sm:text-lg" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', lineHeight: '1.7' }}>
                   Este innovador formato televisivo internacional nace para honrar a Dios y bendecir a la comunidad cristiana, ofreciendo además la oportunidad de celebrar gratuitamente bodas, cumpleaños, quinceañeras y otras fechas especiales en un entorno cristiano.
                 </p>
-                <p className="leading-relaxed mb-4 text-center" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', fontSize: '15px', lineHeight: '1.7' }}>
+                <p className="leading-relaxed mb-4 text-center text-base sm:text-lg" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', lineHeight: '1.7' }}>
                   Cada emisión se convierte en una auténtica fiesta espiritual, donde la adoración a nuestro Señor y los testimonios de Su poder se combinan para inspirar corazones, fortalecer la fe y demostrar que todo es posible cuando celebramos con Jesús.
                 </p>
-                <h3 className="text-2xl font-bold text-center mb-6 mt-8" style={{ color: '#F4D03F' }}>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-6 mt-8" style={{ color: '#F4D03F' }}>
                   Lugar de adoración y testimonio en celebrando con Jesús
                 </h3>
 
@@ -780,10 +780,10 @@ export default function Home() {
                 <h2 className="text-2xl font-bold text-center mb-6" style={{ color: '#F4D03F' }}>
                   Algunos de los platos a degustar en "Celebrando con Jesús"
                 </h2>
-                <p className="leading-relaxed mb-4 text-center" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', fontSize: '15px', lineHeight: '1.7' }}>
+                <p className="leading-relaxed mb-4 text-center text-base sm:text-lg" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', lineHeight: '1.7' }}>
                   La productora del innovador formato televisivo online de carácter internacional <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>"Celebrando con Jesús"</span> ha confiado, desde sus inicios, en el Complejo El Olivar, un espacio que combina belleza, lujo y una propuesta culinaria de primer nivel.
                 </p>
-                <p className="leading-relaxed mb-4 text-center" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', fontSize: '15px', lineHeight: '1.7' }}>
+                <p className="leading-relaxed mb-4 text-center text-base sm:text-lg" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', lineHeight: '1.7' }}>
                   Cada semana, los suscriptores agraciados en el sorteo podrán invitar a 100 amigos, familiares o conocidos, mientras que otros 200 suscriptores serán seleccionados por el programa. Todos ellos disfrutarán de un exquisito menú valorado en 100 euros, en un entorno diseñado para transmitir elegancia, armonía y la magnánima providencia de Dios.
                 </p>
                 <p className="leading-relaxed mb-6 text-center" style={{ color: '#FFFFFF', fontFamily: 'Georgia, serif', fontSize: '15px', lineHeight: '1.7' }}>
