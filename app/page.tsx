@@ -97,6 +97,14 @@ export default function Home() {
                   style={{ border: 'none', minHeight: '250px' }}
                   title="Video Celebrando con Jesús"
                 />
+                <div
+                  className="absolute top-0 right-0 bg-black pointer-events-none z-10"
+                  style={{
+                    width: '80px',
+                    height: '50px',
+                    background: '#15304a'
+                  }}
+                />
               </div>
             </div>
             <div className="mt-4 text-center space-y-4 px-2">
