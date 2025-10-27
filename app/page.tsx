@@ -43,8 +43,8 @@ export default function Home() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#F4D03F' }}>
       <section className="relative overflow-hidden" style={{ backgroundColor: '#F4D03F' }}>
-        <div className="container mx-auto px-6 pt-8" style={{ backgroundColor: '#F4D03F' }}>
-          <div className="bg-white rounded-xl shadow-lg p-4">
+        <div className="container mx-auto px-4 md:px-6 pt-6 md:pt-8" style={{ backgroundColor: '#F4D03F' }}>
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-6">
             <div className="mb-6 text-center">
               <style jsx>{`
                 @keyframes shimmer {
@@ -77,7 +77,7 @@ export default function Home() {
                           drop-shadow(0 0 30px rgba(244, 208, 63, 0.2));
                 }
               `}</style>
-              <h1 className="elegant-title text-4xl md:text-5xl font-bold tracking-tight" style={{
+              <h1 className="elegant-title text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight" style={{
                 fontFamily: 'system-ui, sans-serif',
                 padding: '8px 0',
                 letterSpacing: '0.02em',
@@ -87,8 +87,8 @@ export default function Home() {
                 Celebrando con Jesús
               </h1>
             </div>
-            <div className="relative rounded-lg overflow-hidden" style={{ backgroundColor: '#15304a', minHeight: '250px' }}>
-              <div className="relative w-full h-full" style={{ paddingTop: '56.25%', minHeight: '250px' }}>
+            <div className="relative rounded-lg overflow-hidden" style={{ backgroundColor: '#15304a', minHeight: '200px' }}>
+              <div className="relative w-full h-full" style={{ paddingTop: '56.25%', minHeight: '200px' }}>
                 <iframe
                   src="https://drive.google.com/file/d/1BuxjDPZex0fi-Di00wUgOZ7ty2s2s6zG/preview"
                   className="absolute top-0 left-0 w-full h-full"
@@ -99,11 +99,11 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="mt-4 text-center space-y-4 px-2">
+            <div className="mt-4 text-center space-y-3 px-2">
               <Link href="/suscripciones" className="block">
                 <Button
                   size="lg"
-                  className="bg-white hover:bg-gray-50 rounded-full w-full max-w-md mx-auto px-6 py-6 text-sm sm:text-base font-semibold shadow-xl transition-all"
+                  className="bg-white hover:bg-gray-50 rounded-full w-full max-w-md mx-auto px-6 py-4 min-h-[52px] text-sm sm:text-base font-semibold shadow-xl transition-all touch-manipulation"
                   style={{ color: '#1e4f8f' }}
                 >
                   MODO DE SUSCRIPCION
@@ -112,7 +112,7 @@ export default function Home() {
               <Link href="/celebrando-con-jesus" className="block">
                 <Button
                   size="lg"
-                  className="bg-white hover:bg-gray-50 rounded-full w-full max-w-md mx-auto px-6 py-6 text-sm sm:text-base font-semibold shadow-xl transition-all"
+                  className="bg-white hover:bg-gray-50 rounded-full w-full max-w-md mx-auto px-6 py-4 min-h-[52px] text-sm sm:text-base font-semibold shadow-xl transition-all touch-manipulation"
                   style={{ color: '#1e4f8f' }}
                 >
                   PREMIOS HASTA EL 7 DE NOVIEMBRE
@@ -123,7 +123,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative py-20 md:py-32 overflow-hidden" style={{ backgroundColor: '#F4D03F' }}>
+      <section className="relative py-12 md:py-20 lg:py-32 overflow-hidden" style={{ backgroundColor: '#F4D03F' }}>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-7xl mx-auto">
 
@@ -160,16 +160,16 @@ export default function Home() {
                             drop-shadow(0 0 30px rgba(96, 165, 250, 0.4));
                   }
                 `}</style>
-                <p className="shiny-blue-text text-xl md:text-2xl font-bold tracking-wide px-2">
+                <p className="shiny-blue-text text-base sm:text-lg md:text-xl lg:text-2xl font-bold tracking-wide px-2">
                   La sección que te conecta y premia en celebrando con Jesús
                 </p>
               </div>
-              <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col h-full">
+              <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 md:p-8 flex flex-col h-full">
                 <h3 className="text-2xl font-bold mb-6 text-center cursor-pointer hover:opacity-80 transition-opacity" style={{ color: '#1E4F8F' }} onClick={() => {
                   const modal = document.getElementById('streaming-modal');
                   if (modal) modal.style.display = 'flex';
                 }}>Streaming</h3>
-                <div className="relative rounded-lg overflow-hidden p-6 overflow-y-auto cursor-pointer hover:opacity-95 transition-opacity flex-grow" style={{ backgroundColor: '#15304a', minHeight: '450px' }} onClick={() => {
+                <div className="relative rounded-lg overflow-hidden p-4 sm:p-5 md:p-6 overflow-y-auto cursor-pointer hover:opacity-95 transition-opacity flex-grow" style={{ backgroundColor: '#15304a', minHeight: '300px' }} onClick={() => {
                   const modal = document.getElementById('streaming-modal');
                   if (modal) modal.style.display = 'flex';
                 }}>
@@ -296,16 +296,16 @@ export default function Home() {
                             drop-shadow(0 0 30px rgba(96, 165, 250, 0.4));
                   }
                 `}</style>
-                <p className="shiny-blue-text-needs text-xl md:text-2xl font-bold tracking-wide px-2">
+                <p className="shiny-blue-text-needs text-base sm:text-lg md:text-xl lg:text-2xl font-bold tracking-wide px-2">
                   No importa dónde estés, esta sección es parte del programa Celebrando con Jesús. Siempre a tu lado, para ayudarte cuando y donde lo necesites
                 </p>
               </div>
-              <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col h-full">
+              <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 md:p-8 flex flex-col h-full">
                 <h3 className="text-2xl font-bold mb-6 text-center cursor-pointer hover:opacity-80 transition-opacity" style={{ color: '#1E4F8F' }} onClick={() => {
                   const modal = document.getElementById('necesidades-modal');
                   if (modal) modal.style.display = 'flex';
                 }}>Necesidades</h3>
-                <div className="relative rounded-lg overflow-hidden p-6 overflow-y-auto cursor-pointer hover:opacity-95 transition-opacity flex-grow" style={{ backgroundColor: '#15304a', minHeight: '450px' }} onClick={() => {
+                <div className="relative rounded-lg overflow-hidden p-4 sm:p-5 md:p-6 overflow-y-auto cursor-pointer hover:opacity-95 transition-opacity flex-grow" style={{ backgroundColor: '#15304a', minHeight: '300px' }} onClick={() => {
                   const modal = document.getElementById('necesidades-modal');
                   if (modal) modal.style.display = 'flex';
                 }}>

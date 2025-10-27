@@ -61,21 +61,21 @@ export default function ContactoPage() {
   };
 
   return (
-    <div className="min-h-screen py-20" style={{ backgroundColor: '#F4D03F' }}>
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen py-12 md:py-20" style={{ backgroundColor: '#F4D03F' }}>
+      <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6" style={{ color: '#1E4F8F' }}>
+          <div className="text-center mb-10 md:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6" style={{ color: '#1E4F8F' }}>
               Contacto
             </h1>
-            <p className="text-xl max-w-3xl mx-auto" style={{ color: '#1E4F8F' }}>
+            <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto px-4" style={{ color: '#1E4F8F' }}>
               Conversemos sobre tu próximo proyecto de contenido televisivo
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
             <div>
-              <div className="border rounded-2xl p-8 shadow-sm mb-8" style={{ backgroundColor: '#1E4F8F', borderColor: '#C9A961' }}>
+              <div className="border rounded-2xl p-6 sm:p-8 shadow-sm mb-6 md:mb-8" style={{ backgroundColor: '#1E4F8F', borderColor: '#C9A961' }}>
                 <h2 className="text-2xl font-heading font-semibold mb-6" style={{ color: '#F4D03F' }}>
                   Información de Contacto
                 </h2>
@@ -135,7 +135,7 @@ export default function ContactoPage() {
             </div>
 
             <div>
-              <form onSubmit={handleSubmit} className="border rounded-2xl p-8 shadow-sm" style={{ backgroundColor: '#1E4F8F', borderColor: '#C9A961' }}>
+              <form onSubmit={handleSubmit} className="border rounded-2xl p-6 sm:p-8 shadow-sm" style={{ backgroundColor: '#1E4F8F', borderColor: '#C9A961' }}>
                 <h2 className="text-2xl font-heading font-semibold mb-6" style={{ color: '#F4D03F' }}>
                   Envíanos un Mensaje
                 </h2>
@@ -151,7 +151,7 @@ export default function ContactoPage() {
                       value={formData.nombre}
                       onChange={handleChange}
                       required
-                      className="mt-1.5 rounded-xl border-warm-border focus:border-gold focus:ring-gold"
+                      className="mt-1.5 rounded-xl border-warm-border focus:border-gold focus:ring-gold min-h-[52px]"
                       placeholder="Tu nombre"
                     />
                   </div>
@@ -166,7 +166,7 @@ export default function ContactoPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="mt-1.5 rounded-xl border-warm-border focus:border-gold focus:ring-gold"
+                      className="mt-1.5 rounded-xl border-warm-border focus:border-gold focus:ring-gold min-h-[52px]"
                       placeholder="tu@email.com"
                     />
                   </div>
@@ -180,7 +180,7 @@ export default function ContactoPage() {
                       type="tel"
                       value={formData.telefono}
                       onChange={handleChange}
-                      className="mt-1.5 rounded-xl border-warm-border focus:border-gold focus:ring-gold"
+                      className="mt-1.5 rounded-xl border-warm-border focus:border-gold focus:ring-gold min-h-[52px]"
                       placeholder="+34 123 456 789"
                     />
                   </div>
@@ -202,7 +202,7 @@ export default function ContactoPage() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gold-gradient text-navy hover:opacity-90 transition-all hover:shadow-lg rounded-2xl"
+                    className="w-full bg-gold-gradient text-navy hover:opacity-90 transition-all hover:shadow-lg rounded-2xl min-h-[56px] touch-manipulation"
                     size="lg"
                   >
                     {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
@@ -213,11 +213,11 @@ export default function ContactoPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl p-8 md:p-12 shadow-xl" style={{ backgroundColor: '#1E4F8F' }}>
-            <h2 className="text-3xl font-heading font-bold mb-6" style={{ color: '#F4D03F' }}>
+          <div className="rounded-2xl p-6 sm:p-8 md:p-12 shadow-xl" style={{ backgroundColor: '#1E4F8F' }}>
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-6" style={{ color: '#F4D03F' }}>
               Oportunidades de Negocio
             </h2>
-            <p className="text-lg leading-relaxed mb-6" style={{ color: '#FFFFFF' }}>
+            <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ color: '#FFFFFF' }}>
               Estamos abiertos a colaboraciones estratégicas y proyectos innovadores.
               Si buscas una productora con experiencia internacional y visión creativa,
               conversemos sobre las posibilidades.

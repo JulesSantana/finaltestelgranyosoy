@@ -14,8 +14,8 @@ const quickLinks = [
 export function Footer() {
   return (
     <footer className="text-white" style={{ backgroundColor: '#1E4F8F' }}>
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div className="container mx-auto px-4 md:px-6 py-8 md:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
           <div>
             <Link href="/" className="group mb-6 inline-block">
               <div className="relative w-64 h-16 transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_15px_rgba(244,208,63,0.5)]">
@@ -84,12 +84,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t pt-8" style={{ borderColor: '#F4D03F' }}>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
+        <div className="border-t pt-6 md:pt-8" style={{ borderColor: '#F4D03F' }}>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-4 text-center sm:text-left">
             <p className="text-sm" style={{ color: '#F4D03F' }}>
               © {new Date().getFullYear()} EL GRAN YO SOY. Todos los derechos reservados.
             </p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
               <Link href="#" className="hover:text-gold transition-colors text-sm" style={{ color: '#F4D03F' }}>
                 Política de Privacidad
               </Link>
@@ -98,12 +98,12 @@ export function Footer() {
               </Link>
             </div>
           </div>
-          <div className="flex justify-center items-center pt-4 border-t" style={{ borderColor: '#F4D03F' }}>
+          <div className="flex justify-center items-center pt-4 md:pt-6 border-t" style={{ borderColor: '#F4D03F' }}>
             <div className="flex items-center gap-4">
               <span className="text-sm" style={{ color: '#F4D03F' }}>Diseñado por</span>
               <a
                 href="mailto:luminaweb.design@gmail.com"
-                className="relative w-48 h-16 block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_rgba(244,208,63,0.6)] cursor-pointer group"
+                className="relative w-36 sm:w-48 h-12 sm:h-16 block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_rgba(244,208,63,0.6)] cursor-pointer group touch-manipulation"
               >
                 <Image
                   src="/logo.png"
