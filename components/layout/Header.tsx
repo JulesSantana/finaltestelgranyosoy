@@ -26,9 +26,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="flex h-20 items-center justify-between gap-2">
-          <Link href="/" className="flex items-center group flex-shrink-0">
-            <div className="relative h-12 lg:h-14 w-40 sm:w-52 lg:w-64">
+        <div className="flex h-20 md:h-24 items-center justify-between gap-3 md:gap-4">
+          <Link href="/" className="flex items-center group flex-shrink-0 min-w-0">
+            <div className="relative h-14 md:h-16 lg:h-18 w-48 sm:w-56 md:w-64 lg:w-72">
               <Image
                 src="/Captura de pantalla 2025-10-25 154517.png"
                 alt="EL GRAN YO SOY"
@@ -39,7 +39,7 @@ export function Header() {
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-3 xl:gap-5 flex-shrink min-w-0">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-6 flex-shrink min-w-0">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -47,10 +47,10 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`text-xs font-semibold tracking-wide transition-colors whitespace-nowrap ${
+                  className={`text-sm xl:text-base font-semibold tracking-wide transition-colors whitespace-nowrap px-2 py-2 rounded-md ${
                     isActive
-                      ? ''
-                      : 'hover:opacity-70'
+                      ? 'bg-[rgba(30,79,143,0.1)]'
+                      : 'hover:opacity-70 hover:bg-[rgba(30,79,143,0.05)]'
                   }`}
                   style={{ color: '#1e4f8f' }}
                 >
@@ -99,9 +99,9 @@ export function Header() {
               </button>
             </div>
 
-            <Link href="/mi-cuenta" className="hidden lg:flex items-center gap-1.5 hover:opacity-70 transition-colors flex-shrink-0 px-3 py-2 rounded-lg" style={{ color: '#1e4f8f', backgroundColor: 'rgba(30, 79, 143, 0.05)' }}>
+            <Link href="/mi-cuenta" className="hidden lg:flex items-center gap-2 hover:opacity-70 transition-colors flex-shrink-0 px-4 py-3 rounded-lg" style={{ color: '#1e4f8f', backgroundColor: 'rgba(30, 79, 143, 0.05)' }}>
               <User className="h-5 w-5" />
-              <span className="text-xs font-semibold whitespace-nowrap">MI CUENTA</span>
+              <span className="text-sm xl:text-base font-semibold whitespace-nowrap">MI CUENTA</span>
             </Link>
 
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
