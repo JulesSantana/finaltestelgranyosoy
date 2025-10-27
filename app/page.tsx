@@ -811,7 +811,7 @@ export default function Home() {
                     ))}
                   </div>
 
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-4 md:mb-6">
                     {['/Imagen de WhatsApp 2025-10-26 a las 13.26.35_0269e88e.jpg', '/Imagen de WhatsApp 2025-10-26 a las 13.26.35_d727a589.jpg', '/Imagen de WhatsApp 2025-10-26 a las 13.26.35_82cea2c8.jpg', '/Imagen de WhatsApp 2025-10-26 a las 13.26.34_eaa7e30f.jpg'].map((img, idx) => (
                       <div key={idx} className="relative aspect-square overflow-hidden rounded-lg shadow-md cursor-pointer hover:shadow-xl transition-shadow" onClick={() => {
                         const modal = document.getElementById('food-image-modal');
@@ -831,7 +831,7 @@ export default function Home() {
                     ))}
                   </div>
 
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
                     {['/Imagen de WhatsApp 2025-10-26 a las 13.26.34_c52b3398.jpg', '/Imagen de WhatsApp 2025-10-26 a las 13.26.34_01310777.jpg', '/Imagen de WhatsApp 2025-10-26 a las 13.26.34_b448b800.jpg', '/Imagen de WhatsApp 2025-10-26 a las 13.26.34_13b51e47.jpg'].map((img, idx) => (
                       <div key={idx} className="relative aspect-square overflow-hidden rounded-lg shadow-md cursor-pointer hover:shadow-xl transition-shadow" onClick={() => {
                         const modal = document.getElementById('food-image-modal');
