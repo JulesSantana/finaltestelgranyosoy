@@ -97,8 +97,8 @@ export default function Home() {
                   style={{
                     border: 'none',
                     minHeight: '250px',
-                    top: '-40px',
-                    height: 'calc(100% + 40px)'
+                    top: '-60px',
+                    height: 'calc(100% + 80px)'
                   }}
                   title="Video Celebrando con Jesús"
                 />
