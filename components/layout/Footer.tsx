@@ -98,22 +98,6 @@ export function Footer() {
               </Link>
             </div>
           </div>
-          <div className="flex justify-center items-center pt-4 border-t" style={{ borderColor: '#F4D03F' }}>
-            <div className="flex items-center gap-4">
-              <span className="text-sm" style={{ color: '#F4D03F' }}>Diseñado por</span>
-              <a
-                href="mailto:luminaweb.design@gmail.com"
-                className="relative w-48 h-16 block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_rgba(244,208,63,0.6)] cursor-pointer group"
-              >
-                <Image
-                  src="/logo.png"
-                  alt="Lumina Web"
-                  fill
-                  className="object-contain transition-all duration-300 group-hover:brightness-125"
-                />
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </footer>
