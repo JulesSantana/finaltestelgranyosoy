@@ -11,7 +11,7 @@ const corsHeaders = {
 const stripeSecret = Deno.env.get('STRIPE_SECRET_KEY')!;
 const stripeWebhookSecret = Deno.env.get('STRIPE_WEBHOOK_SECRET');
 const stripe = new Stripe(stripeSecret, {
-  apiVersion: "2025-09-30.clover" as any,
+  apiVersion: "2024-11-20.acacia" as any,
 });
 
 const supabase = createClient(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!);
