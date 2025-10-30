@@ -19,7 +19,7 @@ Deno.serve(async (req: Request) => {
   try {
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-    const stripeSecretKey = Deno.env.get("STRIPE_SECRET_KEY")!;
+    const stripeSecretKey = "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";
 
     if (!stripeSecretKey) {
       return new Response(
@@ -33,7 +33,7 @@ Deno.serve(async (req: Request) => {
 
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
     const stripe = new Stripe(stripeSecretKey, {
-      apiVersion: "2025-09-30.clover" as any,
+      apiVersion: "2024-11-20.acacia" as any,
     });
 
     const body = await req.json();
@@ -197,7 +197,7 @@ Deno.serve(async (req: Request) => {
   } catch (error: any) {
     console.error("Error in create-subscription:", error);
     return new Response(
-      JSON.stringify({ error: error.message || "Internal server error" }),
+      JSON.stringify({ error: error.message || "Internal server error", details: error.toString(), stack: error.stack }),
       {
         status: 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
