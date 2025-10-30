@@ -446,22 +446,30 @@ export default function Suscripciones() {
                   )}
 
                   <div className="pt-4">
-                    <a
-                      href="https://buy.stripe.com/7sYcN66tXfML2uegBPbQY01"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full py-4 text-lg font-bold rounded-xl transition-all transform hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden block text-center"
+                    <Button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full py-4 text-lg font-bold rounded-xl transition-all transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
                       style={{
-                        background: 'linear-gradient(135deg, #1E4F8F 0%, #3b82f6 100%)',
+                        background: loading ? '#6B7280' : 'linear-gradient(135deg, #1E4F8F 0%, #3b82f6 100%)',
                         color: 'white',
                         boxShadow: '0 10px 30px rgba(30, 79, 143, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1)',
                         fontFamily: 'system-ui, sans-serif',
-                        border: 'none',
-                        textDecoration: 'none'
+                        border: 'none'
                       }}
                     >
-                      <span className="relative z-10">Continuar al Pago Seguro</span>
-                    </a>
+                      {loading ? (
+                        <span className="flex items-center justify-center gap-2">
+                          <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Procesando...
+                        </span>
+                      ) : (
+                        <span className="relative z-10">Continuar al Pago Seguro</span>
+                      )}
+                    </Button>
                   </div>
 
                   <p className="text-sm text-center mt-6" style={{ fontFamily: 'system-ui, sans-serif', color: '#FFFFFF' }}>
