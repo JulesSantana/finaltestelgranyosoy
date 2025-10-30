@@ -51,11 +51,15 @@ export default function Suscripciones() {
         throw new Error('El monto debe estar entre $1 y $1000 USD');
       }
 
-      console.log('Calling edge function...');
+      console.log('Calling API...');
       console.log('Current location:', window.location.href);
 
-      const response = await supabase.functions.invoke('create-subscription', {
-        body: {
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
           name: `${formData.nombres} ${formData.apellidos}`,
           email: formData.email,
           password: formData.password,
@@ -67,45 +71,23 @@ export default function Suscripciones() {
           edad: formData.edad,
           telefono: formData.telefono,
           direccion: formData.direccion,
-          origin: window.location.origin,
-        }
+        }),
       });
 
-      console.log('Full response:', response);
+      console.log('Response status:', response.status);
 
-      const { data, error: functionError } = response;
-
-      console.log('=== DEBUG INFO ===');
-      console.log('data:', data);
-      console.log('functionError:', functionError);
-      console.log('==================');
-
-      if (functionError) {
-        console.error('Function error details:', {
-          message: functionError.message,
-          context: (functionError as any).context,
-          details: (functionError as any).details
-        });
-
-        if (data?.error) {
-          console.error('Error from edge function:', data.error);
-          alert(`ERROR DETALLADO:\n\n${data.error}\n\nDetalles adicionales:\n${JSON.stringify(data, null, 2)}`);
-          throw new Error(data.error);
-        }
-
-        alert(`ERROR DE FUNCIÓN:\n\nMensaje: ${functionError.message}\n\nData completa:\n${JSON.stringify(data, null, 2)}`);
-        throw new Error(functionError.message || 'Error al procesar la suscripción');
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error('Error response:', errorData);
+        alert(`ERROR:\n\n${errorData.error}\n\n${errorData.details || ''}`);
+        throw new Error(errorData.error || 'Error al procesar la suscripción');
       }
 
+      const data = await response.json();
       console.log('Success response:', data);
 
-      if (data?.error) {
-        console.error('Data error:', data.error);
-        alert(`ERROR EN DATA:\n\n${data.error}`);
-        throw new Error(data.error);
-      }
-
       if (data?.url) {
+        console.log('Redirecting to:', data.url);
         window.location.href = data.url;
       } else {
         throw new Error('No se recibió la URL de pago');
