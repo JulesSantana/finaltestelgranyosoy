@@ -31,24 +31,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const checkUser = async () => {
     try {
-      const { data: { session } } = await supabase.auth.getSession();
-
-      if (session?.user) {
-        const { data: userData } = await supabase
-          .from('subscription_users')
-          .select('*')
-          .eq('auth_user_id', session.user.id)
-          .maybeSingle();
-
-        if (userData) {
-          setUser({
-            id: userData.id,
-            email: userData.email,
-            name: userData.name,
-            subscription_status: userData.subscription_status || 'pending',
-            current_period_end: userData.current_period_end
-          });
-        }
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        setUser(JSON.parse(storedUser));
       }
     } catch (error) {
       console.error('Error checking user:', error);
@@ -59,30 +44,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const login = async (email: string, password: string) => {
     try {
-      const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
-        email,
-        password
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
       });
 
-      if (authError) throw authError;
+      const data = await response.json();
 
-      if (authData.user) {
-        const { data: userData } = await supabase
-          .from('subscription_users')
-          .select('*')
-          .eq('auth_user_id', authData.user.id)
-          .maybeSingle();
+      if (!response.ok) {
+        return { success: false, error: data.error || 'Error al iniciar sesión' };
+      }
 
-        if (userData) {
-          setUser({
-            id: userData.id,
-            email: userData.email,
-            name: userData.name,
-            subscription_status: userData.subscription_status || 'pending',
-            current_period_end: userData.current_period_end
-          });
-          return { success: true };
-        }
+      if (data.user) {
+        setUser(data.user);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        return { success: true };
       }
 
       return { success: false, error: 'Usuario no encontrado' };
@@ -92,7 +71,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const logout = async () => {
-    await supabase.auth.signOut();
+    localStorage.removeItem('user');
     setUser(null);
   };
 
