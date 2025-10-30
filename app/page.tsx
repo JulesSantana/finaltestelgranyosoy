@@ -87,22 +87,24 @@ export default function Home() {
                 Celebrando con Jesús
               </h1>
             </div>
-            <div className="relative rounded-lg overflow-hidden" style={{ backgroundColor: '#15304a', minHeight: '250px' }}>
-              <div className="relative w-full h-full" style={{ paddingTop: '56.25%', minHeight: '250px' }}>
-                <iframe
-                  src="https://drive.google.com/file/d/1BuxjDPZex0fi-Di00wUgOZ7ty2s2s6zG/preview"
-                  className="absolute left-0 w-full"
-                  allow="autoplay"
-                  allowFullScreen
-                  style={{
-                    border: 'none',
-                    minHeight: '250px',
-                    top: '-60px',
-                    height: 'calc(100% + 80px)'
-                  }}
-                  title="Video Celebrando con Jesús"
-                />
-              </div>
+            <div className="relative rounded-lg overflow-hidden flex items-center justify-center" style={{ backgroundColor: '#15304a', minHeight: '500px' }}>
+              <blockquote
+                className="tiktok-embed"
+                cite="https://www.tiktok.com/@produccristelgranyosoy/video/7460869577736817925"
+                data-video-id="7460869577736817925"
+                style={{ maxWidth: '605px', minWidth: '325px' }}
+              >
+                <section>
+                  <a
+                    target="_blank"
+                    title="@produccristelgranyosoy"
+                    href="https://www.tiktok.com/@produccristelgranyosoy?refer=embed"
+                  >
+                    @produccristelgranyosoy
+                  </a>
+                </section>
+              </blockquote>
+              <script async src="https://www.tiktok.com/embed.js"></script>
             </div>
             <div className="mt-4 text-center space-y-4 px-2">
               <Link href="/suscripciones" className="block">
