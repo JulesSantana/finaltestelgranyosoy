@@ -52,11 +52,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         body: JSON.stringify({ email, password }),
       });
 
-      const data = await response.json();
-
       if (!response.ok) {
-        return { success: false, error: data.error || 'Error al iniciar sesión' };
+        let errorMessage = 'Error al iniciar sesión';
+        try {
+          const data = await response.json();
+          errorMessage = data.error || errorMessage;
+        } catch {
+          errorMessage = `Error del servidor (${response.status})`;
+        }
+        return { success: false, error: errorMessage };
       }
+
+      const data = await response.json();
 
       if (data.user) {
         setUser(data.user);
@@ -66,7 +73,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       return { success: false, error: 'Usuario no encontrado' };
     } catch (error: any) {
-      return { success: false, error: error.message || 'Error al iniciar sesión' };
+      console.error('Login error:', error);
+      return { success: false, error: 'Error de conexión. Por favor, intenta de nuevo.' };
     }
   };
 
