@@ -89,9 +89,11 @@ export default function Suscripciones() {
 
         if (data?.error) {
           console.error('Error from edge function:', data.error);
+          alert(`ERROR DETALLADO:\n\n${data.error}\n\nDetalles adicionales:\n${JSON.stringify(data, null, 2)}`);
           throw new Error(data.error);
         }
 
+        alert(`ERROR DE FUNCIÓN:\n\nMensaje: ${functionError.message}\n\nData completa:\n${JSON.stringify(data, null, 2)}`);
         throw new Error(functionError.message || 'Error al procesar la suscripción');
       }
 
@@ -99,6 +101,7 @@ export default function Suscripciones() {
 
       if (data?.error) {
         console.error('Data error:', data.error);
+        alert(`ERROR EN DATA:\n\n${data.error}`);
         throw new Error(data.error);
       }
 
