@@ -87,19 +87,18 @@ export default function Home() {
                 Celebrando con Jesús
               </h1>
             </div>
-            <div className="relative rounded-lg overflow-hidden" style={{ backgroundColor: '#15304a', minHeight: '300px' }}>
-              <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
+            <div className="relative rounded-lg overflow-hidden" style={{ backgroundColor: '#15304a', minHeight: '250px' }}>
+              <div className="relative w-full h-full" style={{ paddingTop: '56.25%', minHeight: '250px' }}>
                 <iframe
-                  src="https://drive.google.com/file/d/1tdfxK3be16fD81vuGlBOdcBY3ZwhzLpX/preview"
-                  className="absolute w-full h-full"
+                  src="https://drive.google.com/file/d/1BuxjDPZex0fi-Di00wUgOZ7ty2s2s6zG/preview"
+                  className="absolute left-0 w-full"
                   allow="autoplay"
                   allowFullScreen
                   style={{
                     border: 'none',
-                    transform: 'scale(1.3)',
-                    transformOrigin: 'center center',
-                    top: '0',
-                    left: '0',
+                    minHeight: '250px',
+                    top: '-60px',
+                    height: 'calc(100% + 80px)'
                   }}
                   title="Video Celebrando con Jesús"
                 />
