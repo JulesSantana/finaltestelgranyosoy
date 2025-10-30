@@ -8,14 +8,6 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Client-Info, Apikey",
 };
 
-async function hashPassword(password: string): Promise<string> {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(password);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") {
     return new Response(null, {
@@ -79,13 +71,10 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    const { data: existingUser } = await supabase
-      .from("subscription_users")
-      .select("id")
-      .eq("email", email)
-      .maybeSingle();
+    const { data: existingAuthUser } = await supabase.auth.admin.listUsers();
+    const userExists = existingAuthUser?.users?.some(u => u.email === email);
 
-    if (existingUser) {
+    if (userExists) {
       return new Response(
         JSON.stringify({ error: "A user with this email already exists" }),
         {
@@ -95,14 +84,42 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    const passwordHash = await hashPassword(password);
+    const { data: authUser, error: authError } = await supabase.auth.admin.createUser({
+      email,
+      password,
+      email_confirm: true,
+      user_metadata: {
+        name,
+        nombres,
+        apellidos,
+        documento,
+        pais,
+        edad,
+        telefono,
+        direccion,
+      },
+    });
+
+    if (authError || !authUser.user) {
+      console.error("Error creating auth user:", authError);
+      return new Response(
+        JSON.stringify({
+          error: "Failed to create user account",
+          details: authError?.message,
+        }),
+        {
+          status: 500,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        }
+      );
+    }
 
     const { data: newUser, error: userError } = await supabase
       .from("subscription_users")
       .insert({
+        auth_user_id: authUser.user.id,
         name,
         email,
-        password_hash: passwordHash,
         subscription_amount: amountInCents,
         subscription_status: "pending",
       })
@@ -110,10 +127,11 @@ Deno.serve(async (req: Request) => {
       .single();
 
     if (userError || !newUser) {
-      console.error("Error creating user:", userError);
+      console.error("Error creating subscription user:", userError);
+      await supabase.auth.admin.deleteUser(authUser.user.id);
       return new Response(
         JSON.stringify({
-          error: "Failed to create user account",
+          error: "Failed to create subscription record",
           details: userError?.message,
         }),
         {

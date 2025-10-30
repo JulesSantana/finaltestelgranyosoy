@@ -37,7 +37,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const { data: userData } = await supabase
           .from('subscription_users')
           .select('*')
-          .eq('user_id', session.user.id)
+          .eq('auth_user_id', session.user.id)
           .maybeSingle();
 
         if (userData) {
@@ -45,7 +45,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             id: userData.id,
             email: userData.email,
             name: userData.name,
-            subscription_status: userData.status || 'pending',
+            subscription_status: userData.subscription_status || 'pending',
             current_period_end: userData.current_period_end
           });
         }
@@ -70,7 +70,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const { data: userData } = await supabase
           .from('subscription_users')
           .select('*')
-          .eq('user_id', authData.user.id)
+          .eq('auth_user_id', authData.user.id)
           .maybeSingle();
 
         if (userData) {
@@ -78,7 +78,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             id: userData.id,
             email: userData.email,
             name: userData.name,
-            subscription_status: userData.status || 'pending',
+            subscription_status: userData.subscription_status || 'pending',
             current_period_end: userData.current_period_end
           });
           return { success: true };
