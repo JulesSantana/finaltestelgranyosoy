@@ -136,6 +136,9 @@ export async function POST(req: NextRequest) {
 
     console.log('User created successfully:', newUser.id);
 
+    const origin = req.nextUrl.origin || 'http://localhost:3000';
+    console.log('Using origin:', origin);
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       mode: 'subscription',
@@ -169,8 +172,8 @@ export async function POST(req: NextRequest) {
         telefono: telefono || '',
         direccion: direccion || '',
       },
-      success_url: `${req.headers.get('origin')}/suscripciones/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${req.headers.get('origin')}/suscripciones/cancel`,
+      success_url: `${origin}/suscripciones/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${origin}/suscripciones/cancel`,
     });
 
     const { error: paymentError } = await supabase
