@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script';
+import { useEffect } from 'react';
 import {
   Video,
   Megaphone,
@@ -21,6 +23,12 @@ import ImageCarousel from '@/components/ImageCarousel';
 
 export default function Home() {
   const { t } = useLanguage();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).tiktok) {
+      (window as any).tiktok.load();
+    }
+  }, []);
 
   const olivarCarouselImages = [
     '/Imagen de WhatsApp 2025-10-26 a las 13.55.17_2ec5d865.jpg',
@@ -104,7 +112,15 @@ export default function Home() {
                   </a>
                 </section>
               </blockquote>
-              <script async src="https://www.tiktok.com/embed.js"></script>
+              <Script
+                src="https://www.tiktok.com/embed.js"
+                strategy="lazyOnload"
+                onLoad={() => {
+                  if (typeof window !== 'undefined' && (window as any).tiktok) {
+                    (window as any).tiktok.load();
+                  }
+                }}
+              />
             </div>
             <div className="mt-4 text-center space-y-4 px-2">
               <Link href="/suscripciones" className="block">
