@@ -90,7 +90,7 @@ export default function Home() {
             <div className="relative rounded-lg overflow-hidden" style={{ backgroundColor: '#15304a', minHeight: '300px' }}>
               <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
                 <iframe
-                  src="https://drive.google.com/file/d/1BuxjDPZex0fi-Di00wUgOZ7ty2s2s6zG/preview"
+                  src="https://drive.google.com/file/d/1tdfxK3be16fD81vuGlBOdcBY3ZwhzLpX/preview"
                   className="absolute top-0 left-0 w-full h-full"
                   allow="autoplay"
                   allowFullScreen
